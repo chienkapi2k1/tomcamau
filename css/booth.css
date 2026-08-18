@@ -1,0 +1,507 @@
+.booth-page {
+  background: #f9f9f9;
+}
+.booth-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 410px;
+  background: #fff;
+  gap: 0;
+}
+.map-stage {
+  overflow: hidden;
+  background: #fff;
+}
+.map-top {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.scheme {
+  padding: 24px 22px;
+}
+.scheme h1 {
+  font-size: 28px;
+  margin: 0 0 10px;
+}
+.scheme-card {
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  padding: 9px 10px;
+  background: #fff;
+}
+.scheme-title {
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+.price-line {
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  gap: 5px;
+  align-items: start;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+}
+.price-line b {
+  display: block;
+}
+.price-line strong {
+  display: block;
+  font-size: 13px;
+  margin-top: 7px;
+}
+.price-line > span {
+  color: #888;
+  font-weight: 600;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: block;
+  margin-top: 1px;
+}
+.green {
+  background: #0ba500;
+}
+.purple {
+  background: #8c44f5;
+}
+.yellow {
+  background: #ffc400;
+}
+.scheme-card p {
+  font-size: 11px;
+  margin: 8px 0 0;
+}
+.booth-bottom {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* =========================
+   MAP
+========================= */
+.booth-map-area {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+
+  /* Design Figma */
+  --design-width: 1920px;
+  --design-height: 879px;
+  --booth-left: 98.34px;
+  --booth-top: 248px;
+  --booth-width: 1201.8247px;
+  --booth-height: 367px;
+}
+
+/* Background */
+.event-map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Layer chứa booth */
+.booth-overlay {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 5;
+}
+
+/* Booth */
+.map-bottom {
+  position: absolute;
+
+  /*
+   * Tỷ lệ theo design 1920px
+   */
+  width: calc(1201.8247 / 1920 * 100%);
+  height: auto;
+
+  left: calc(98.34 / 1920 * 100%);
+  top: calc(248 / 879 * 100%);
+
+  display: block;
+
+  pointer-events: none;
+}
+/* =========================
+   CLICKABLE BOOTHS
+========================= */
+
+.booth-hotspots {
+  position: absolute;
+  inset: 0;
+}
+
+.booth-hotspot {
+  position: absolute;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+
+  /*
+   * Không làm ảnh hưởng tới SVG.
+   */
+  z-index: 2;
+}
+
+.booth-hotspot:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.booth-hotspot.selected {
+  background: rgba(255, 255, 0, 0.22);
+  box-shadow:
+    inset 0 0 0 2px #ffd600,
+    0 0 8px rgba(255, 214, 0, 0.65);
+}
+
+/* =========================
+   FADE MAP UNDER PANEL
+========================= */
+
+.booth-map-area::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  /*
+   * Panel hiện tại rộng khoảng 410px.
+   */
+  width: 410px;
+
+  pointer-events: none;
+
+  z-index: 10;
+
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.55) 35%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+}
+
+/* =========================
+   SELECTION PANEL
+========================= */
+
+.selection {
+  position: absolute;
+
+  top: calc(90 / 879 * 100%);
+
+  right: calc(48 / 1920 * 100%);
+
+  width: 500px;
+  min-height: 282px;
+
+  box-sizing: border-box;
+
+  padding: 28px 22px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  z-index: 20;
+}
+
+.selection h1 {
+  font-size: 28px;
+  line-height: 1.2;
+
+  margin: 0 0 18px;
+
+  font-weight: 700;
+}
+
+.selection-card {
+  border: 1px solid #ddd;
+  border-radius: 14px;
+
+  padding: 12px;
+
+  font-size: 13px;
+
+  background: #fff;
+}
+
+.selected-tags {
+  min-height: 25px;
+
+  margin: 8px 0 10px;
+}
+
+.selected-tags span {
+  display: inline-flex;
+  align-items: center;
+
+  background: #a6d46e;
+
+  border: 1px solid #6fa53d;
+  border-radius: 7px;
+
+  padding: 3px 7px;
+
+  margin: 0 4px 4px 0;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.selected-tags .empty-selection {
+  background: transparent;
+  border: 0;
+
+  color: #999;
+
+  padding: 0;
+  margin: 0;
+}
+
+.selection-card hr {
+  border: 0;
+  border-top: 1px solid #eee;
+
+  margin: 8px 0;
+}
+
+.s-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 7px 0;
+
+  color: #999;
+}
+
+.s-row b {
+  color: #222;
+}
+
+.selection-total {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 10px;
+  padding: 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 14px;
+
+  background: #fff;
+}
+
+.selection-total > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.selection-total span {
+  font-size: 14px;
+  color: #222;
+}
+
+.selection-total b {
+  color: #07549b;
+  font-size: 21px;
+}
+
+.continue {
+  width: 190px;
+  height: 46px;
+
+  border-radius: 25px;
+
+  background: #2f70d5;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.continue:hover {
+  background: #2462c0;
+  color: #fff;
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .selection {
+    width: 380px;
+  }
+
+  .booth-map-area::after {
+    width: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booth-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .booth-map-area {
+    overflow-x: auto;
+  }
+
+  /*
+   * Mobile không ép map quá nhỏ.
+   */
+  .event-map {
+    width: 100%;
+    min-width: 1000px;
+  }
+
+  .booth-overlay {
+    width: 1000px;
+    min-width: 1000px;
+
+    top: 130px;
+  }
+
+  .booth-map-area::after {
+    display: none;
+  }
+
+  .selection {
+    position: relative;
+
+    width: 100%;
+    min-height: auto;
+
+    padding: 20px;
+  }
+
+  .selection-total {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+  .continue {
+    width: 100%;
+  }
+}
+.booth-map-area {
+  overflow: hidden;
+}
+
+.selection {
+  padding: 28px 22px;
+}
+.selection h1 {
+  font-size: 28px;
+  margin: 0 0 12px;
+}
+.selection-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 12px;
+  background: #fff;
+}
+.selected-tags {
+  margin: 6px 0 10px;
+}
+.selected-tags span {
+  display: inline-block;
+  background: #a6d46e;
+  border: 1px solid #6fa53d;
+  border-radius: 6px;
+  padding: 2px 6px;
+  margin-right: 4px;
+}
+.selection-card hr {
+  border: 0;
+  border-top: 1px solid #eee;
+}
+.s-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  color: #999;
+}
+.s-row b {
+  color: #222;
+}
+.s-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 6px;
+}
+.s-total b {
+  font-size: 17px;
+  color: #0b5aa9;
+}
+.continue {
+  height: 42px;
+  border-radius: 22px;
+  background: #4d87dc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 13px;
+}
+@media (max-width: 1000px) {
+  .booth-top,
+  .booth-bottom {
+    grid-template-columns: 1fr;
+  }
+  .scheme,
+  .selection {
+    padding: 18px;
+  }
+  .map-top {
+    max-height: none;
+  }
+  .booth-top {
+    gap: 0;
+  }
+}
