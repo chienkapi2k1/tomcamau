@@ -1,0 +1,223 @@
+@font-face {
+  font-family: InterLocal;
+  src: local("Inter");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: InterLocal, Inter, Arial, sans-serif;
+  color: #111;
+  background: #f8f8f8;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+:root {
+  --blue: #296dd2;
+  --blue-dark: #1f5fbe;
+  --border: #e5e5e5;
+  --field: #f6f6f6;
+}
+
+.site-header {
+  height: 80px;
+  background: #296dd2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 42px;
+  gap: 28px;
+}
+
+.site-logo {
+  width: 43px;
+  height: 43px;
+  object-fit: contain;
+  flex: none;
+}
+
+.site-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.site-nav a {
+  white-space: nowrap;
+}
+
+.site-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-pill {
+  height: 42px;
+  border: 1px solid #fff;
+  border-radius: 24px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.nav-pill.filled {
+  background: #fff;
+  color: #296dd2;
+}
+
+.lang-pill {
+  height: 42px;
+  border: 0;
+  border-radius: 24px;
+  background: #fff;
+  padding: 0 15px;
+}
+
+.site-footer {
+  background: #fff;
+  padding: 78px 40px 20px;
+}
+
+.footer-brand {
+  text-align: center;
+}
+
+.footer-logo {
+  width: 145px;
+  height: 145px;
+  object-fit: contain;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  color: #1264cf;
+  font-size: 16px;
+  margin: 15px 0 55px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #8db4ea;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1264cf;
+  font-size: 13px;
+}
+
+.footer-contact {
+  display: flex;
+  gap: 30px;
+}
+
+/* Styling icon liên hệ ở footer */
+.footer-contact span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.container {
+  width: min(1440px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 14px;
+}
+
+.field {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  background: #f7f7f7;
+  padding: 0 12px;
+  outline: none;
+}
+
+.field:focus {
+  border-color: #296dd2;
+  background: #fff;
+}
+
+label {
+  font-size: 13px;
+}
+
+.required:after {
+  content: " *";
+  color: #e33;
+}
+
+.primary {
+  border: 0;
+  background: #4f8ddd;
+  color: #fff;
+  border-radius: 24px;
+  height: 44px;
+  padding: 0 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .site-header {
+    padding: 0 18px;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .site-actions .nav-pill {
+    display: none;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-contact {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

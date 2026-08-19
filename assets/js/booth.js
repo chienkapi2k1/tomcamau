@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*
    * Vị trí + kích thước booth.svg
-   * theo đúng Figma
    */
   const BOOTH_LEFT = 98.34;
   const BOOTH_TOP = 248;

@@ -1,0 +1,84 @@
+/* =========================================================
+   TRUYỀN THÔNG — trang chi tiết bài viết
+   ========================================================= */
+
+.article-page{
+  max-width:1200px;
+  margin:0 auto;
+  padding:40px 40px 0;
+}
+
+.article-title{
+  text-align:center;
+  font-size:34px;
+  font-weight:700;
+  line-height:1.3;
+  margin:8px auto 32px;
+  max-width:900px;
+}
+
+.article-hero{
+  margin:0 0 32px;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  background:#e9ebee;
+}
+.article-hero img{ width:100%; aspect-ratio:16/8.3; object-fit:cover; }
+
+.article-body{
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.article-body p{
+  font-size:15px;
+  line-height:1.75;
+  color:#2b2e36;
+}
+.article-body h2{
+  font-size:24px;
+  font-weight:700;
+  line-height:1.35;
+  margin-top:12px;
+}
+.article-inline-image{
+  margin:8px 0;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  background:#e9ebee;
+}
+.article-inline-image img{ width:100%; aspect-ratio:16/8.3; object-fit:cover; }
+
+.article-meta{
+  max-width:900px;
+  margin:28px auto 0;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  flex-wrap:wrap;
+  font-size:14px;
+  color:var(--color-text-muted);
+}
+.article-meta__item{ display:inline-flex; align-items:center; gap:8px; }
+.article-meta__item svg{ width:17px; height:17px; flex-shrink:0; }
+.article-meta__item a{ color:var(--color-primary); text-decoration:underline; }
+
+.related-section{
+  max-width:var(--page-max);
+  margin:56px auto 0;
+  padding:0 0 0;
+}
+
+@media (max-width:1024px){
+  .article-page{ padding:32px 24px 0; }
+  .article-title{ font-size:26px; }
+}
+
+@media (max-width:768px){
+  .article-page{ padding:24px 16px 0; }
+  .article-title{ font-size:22px; margin-bottom:24px; }
+  .article-body h2{ font-size:19px; }
+  .article-meta{ gap:16px; }
+}
