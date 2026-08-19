@@ -1,144 +1,207 @@
-.booth-page {
-  background: #f9f9f9;
-}
-.booth-top {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 410px;
-  background: #fff;
-  gap: 0;
-}
-.map-stage {
-  overflow: hidden;
-  background: #fff;
-}
-.map-top {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.scheme {
-  padding: 24px 22px;
-}
-.scheme h1 {
-  font-size: 28px;
-  margin: 0 0 10px;
-}
-.scheme-card {
-  border: 1px solid #dedede;
-  border-radius: 10px;
-  padding: 9px 10px;
-  background: #fff;
-}
-.scheme-title {
-  font-size: 12px;
-  margin-bottom: 7px;
-}
-.price-line {
-  display: grid;
-  grid-template-columns: 18px 1fr auto;
-  gap: 5px;
-  align-items: start;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-  font-size: 12px;
-}
-.price-line b {
-  display: block;
-}
-.price-line strong {
-  display: block;
-  font-size: 13px;
-  margin-top: 7px;
-}
-.price-line > span {
-  color: #888;
-  font-weight: 600;
-}
-.dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  display: block;
-  margin-top: 1px;
-}
-.green {
-  background: #0ba500;
-}
-.purple {
-  background: #8c44f5;
-}
-.yellow {
-  background: #ffc400;
-}
-.scheme-card p {
-  font-size: 11px;
-  margin: 8px 0 0;
-}
-.booth-bottom {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: #fff;
+/* ==========================================================================
+   Tôm Fest Cà Mau — Khu triển lãm / chọn gian hàng (booth.html)
+   Nguồn: Figma node 5162:338 (1920x2529)
+   Yêu cầu: css/tokens.css → css/base.css → file này.
+   ========================================================================== */
+
+.booth {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
 }
 
-/* =========================
-   MAP
-========================= */
+/* Tiêu đề panel: "Sơ đồ sự kiện" / "Chi tiết gian hàng" */
+.panel-title {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: clamp(1.5rem, 1.32rem + 0.73vw, 2rem);   /* 24 → 32 */
+  line-height: var(--lh-normal);
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* ==========================================================================
+   Phần 1 — Sơ đồ tổng thể + bảng giá
+   ========================================================================== */
+.booth-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background: var(--c-surface);
+}
+
+.booth-overview__map {
+  min-width: 0;
+  overflow-x: auto;      /* màn hẹp: sơ đồ vẫn đọc được, vuốt ngang để xem hết */
+}
+
+.booth-overview__map img {
+  width: 100%;
+  min-width: 640px;
+  height: auto;
+}
+
+.booth-overview__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--gutter);
+}
+
+@media (min-width: 1024px) {
+  .booth-overview { grid-template-columns: minmax(0, 1fr) 560px; }
+  .booth-overview__map { overflow: hidden; }
+  .booth-overview__map img { min-width: 0; }
+  .booth-overview__panel { padding: var(--space-xl) 48px var(--space-xl) var(--space-sm); }
+}
+
+/* --- Thẻ bảng giá ----------------------------------------------------------- */
+.price-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  border: 1px solid var(--c-border-card);
+  border-radius: var(--radius-card);
+  background: var(--c-surface);
+}
+
+.price-card__label {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.28px;
+  color: #0d0d0d;
+}
+
+.price-card__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.price-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: var(--space-sm);
+  border: 1px solid var(--c-border-card);
+  border-radius: var(--radius-sm);
+  background: var(--c-fill-subtle);
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: 0.9375rem;                 /* 15px */
+  line-height: var(--lh-normal);
+  color: #000;
+}
+
+.price-row__name { flex: 1 1 0; min-width: 0; }
+
+.price-row__note {
+  flex: none;
+  color: rgb(0 0 0 / 50%);
+}
+
+.swatch {
+  flex: none;
+  width: 24px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+}
+
+.swatch--v0 { background: var(--c-zone-v0); }
+.swatch--v1 { background: var(--c-zone-v1); }
+.swatch--v2 { background: var(--c-zone-v2); }
+
+.price-amount {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: 1.125rem;                  /* 18px */
+  line-height: var(--lh-normal);
+}
+
+.price-amount strong { flex: 1 1 0; min-width: 0; font-weight: inherit; color: #000; }
+.price-amount span { flex: none; color: rgb(0 0 0 / 50%); }
+
+.price-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs);
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: 1.48;
+  letter-spacing: -0.18px;
+  color: rgb(0 0 0 / 90%);
+}
+
+.price-contact a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.price-contact a:hover { color: var(--c-primary); }
+
+/* ==========================================================================
+   Phần 2 — Sơ đồ gian hàng có thể chọn
+   ========================================================================== */
+.booth-picker {
+  position: relative;
+  background: var(--c-surface);
+}
+
+.booth-picker__hint {
+  display: flex;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--gutter) 0;
+  font-size: var(--fs-sm);
+  color: rgb(0 0 0 / 55%);
+}
+
+.booth-picker__scroller { overflow-x: auto; }
+
+.booth-picker__scroller > .booth-map-area { min-width: 1400px; }
+
+/* --- Bộ khung bản đồ (giữ nguyên hệ toạ độ mà assets/js/booth.js dùng) ------ */
 .booth-map-area {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: #fff;
-
-  /* Design Figma */
-  --design-width: 1920px;
-  --design-height: 879px;
-  --booth-left: 98.34px;
-  --booth-top: 248px;
-  --booth-width: 1201.8247px;
-  --booth-height: 367px;
+  background: var(--c-surface);
 }
 
-/* Background */
 .event-map {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* Layer chứa booth */
 .booth-overlay {
   position: absolute;
-
-  left: 0;
-  top: 0;
-
-  width: 100%;
-  height: 100%;
-
+  inset: 0;
   z-index: 5;
 }
 
-/* Booth */
+/* booth.svg đặt đúng vị trí 98.34/248 trong khung 1920x879 của design */
 .map-bottom {
   position: absolute;
-
-  /*
-   * Tỷ lệ theo design 1920px
-   */
-  width: calc(1201.8247 / 1920 * 100%);
-  height: auto;
-
   left: calc(98.34 / 1920 * 100%);
   top: calc(248 / 879 * 100%);
-
+  width: calc(1201.8247 / 1920 * 100%);
+  height: auto;
   display: block;
-
   pointer-events: none;
 }
-/* =========================
-   CLICKABLE BOOTHS
-========================= */
 
 .booth-hotspots {
   position: absolute;
@@ -147,361 +210,169 @@
 
 .booth-hotspot {
   position: absolute;
-
   margin: 0;
   padding: 0;
-
   border: 0;
+  border-radius: 2px;
   background: transparent;
-
   cursor: pointer;
-
-  /*
-   * Không làm ảnh hưởng tới SVG.
-   */
   z-index: 2;
+  transition: background-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
 }
 
-.booth-hotspot:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
+.booth-hotspot:hover { background: rgb(255 255 255 / 22%); }
 
 .booth-hotspot.selected {
-  background: rgba(255, 255, 0, 0.22);
-  box-shadow:
-    inset 0 0 0 2px #ffd600,
-    0 0 8px rgba(255, 214, 0, 0.65);
+  background: rgb(41 109 210 / 35%);
+  box-shadow: inset 0 0 0 2px var(--c-primary);
 }
 
-/* =========================
-   FADE MAP UNDER PANEL
-========================= */
-
-.booth-map-area::after {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  right: 0;
-  bottom: 0;
-
-  /*
-   * Panel hiện tại rộng khoảng 410px.
-   */
-  width: 410px;
-
-  pointer-events: none;
-
-  z-index: 10;
-
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.55) 35%,
-    rgba(255, 255, 255, 0.9) 100%
-  );
+.booth-hotspot:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 1px;
 }
 
-/* =========================
-   SELECTION PANEL
-========================= */
-
-.selection {
-  position: absolute;
-
-  top: calc(90 / 879 * 100%);
-
-  right: calc(48 / 1920 * 100%);
-
-  width: 500px;
-  min-height: 282px;
-
-  box-sizing: border-box;
-
-  padding: 28px 22px;
-
-  background: rgba(255, 255, 255, 0.96);
-
-  z-index: 20;
+/* --- Panel chi tiết gian hàng ------------------------------------------------ */
+.booth-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-xl) var(--gutter);
+  background: var(--c-surface);
 }
 
-.selection h1 {
-  font-size: 28px;
-  line-height: 1.2;
-
-  margin: 0 0 18px;
-
-  font-weight: 700;
+.detail-card,
+.total-card {
+  border: 1px solid var(--c-border-card);
+  border-radius: var(--radius-card);
+  background: var(--c-surface);
+  padding: var(--space-sm);
 }
 
-.selection-card {
-  border: 1px solid #ddd;
-  border-radius: 14px;
-
-  padding: 12px;
-
-  font-size: 13px;
-
-  background: #fff;
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
+.detail-card__label {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-tight);
+  color: rgb(0 0 0 / 70%);
+}
+
+/* Danh sách gian hàng đã chọn — booth.js đổ <span> vào đây */
 .selected-tags {
-  min-height: 25px;
-
-  margin: 8px 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs);
+  min-height: 22px;
+  margin-top: var(--space-2xs);
 }
 
 .selected-tags span {
   display: inline-flex;
   align-items: center;
-
-  background: #a6d46e;
-
-  border: 1px solid #6fa53d;
-  border-radius: 7px;
-
-  padding: 3px 7px;
-
-  margin: 0 4px 4px 0;
-
-  font-size: 12px;
-  font-weight: 500;
+  padding: 3px 8px;
+  border: 1px solid var(--c-zone-v0-line);
+  border-radius: 6px;
+  background: var(--c-zone-v0-soft);
+  color: var(--c-zone-v0-ink);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-xs, 0.75rem);
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 .selected-tags .empty-selection {
-  background: transparent;
+  border-color: var(--c-border-card);
+  background: var(--c-fill-subtle);
+  color: rgb(0 0 0 / 45%);
+  font-weight: var(--fw-regular);
+}
+
+.detail-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-tight);
+  color: rgb(0 0 0 / 70%);
+}
+
+.detail-row b {
+  font-weight: var(--fw-semibold);
+  color: #000;
+}
+
+.detail-row--indent { padding-left: var(--space-sm); }
+
+.detail-divider {
+  height: 1px;
+  background: var(--c-hairline);
   border: 0;
-
-  color: #999;
-
-  padding: 0;
   margin: 0;
 }
 
-.selection-card hr {
-  border: 0;
-  border-top: 1px solid #eee;
-
-  margin: 8px 0;
-}
-
-.s-row {
+.total-card {
   display: flex;
-
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-
-  padding: 7px 0;
-
-  color: #999;
-}
-
-.s-row b {
-  color: #222;
-}
-
-.selection-total {
-  display: flex;
-
   justify-content: space-between;
-  align-items: center;
-
-  margin-top: 10px;
-  padding: 12px;
-
-  border: 1px solid #ddd;
-  border-radius: 14px;
-
-  background: #fff;
+  gap: var(--space-md);
 }
 
-.selection-total > div {
+.total-card__sum {
   display: flex;
   flex-direction: column;
-
-  gap: 5px;
+  gap: var(--space-xs);
 }
 
-.selection-total span {
-  font-size: 14px;
-  color: #222;
+.total-card__sum span {
+  font-size: var(--fs-body);
+  line-height: var(--lh-tight);
+  color: rgb(0 0 0 / 70%);
 }
 
-.selection-total b {
-  color: #07549b;
-  font-size: 21px;
+.total-card__sum b {
+  font-weight: var(--fw-bold);
+  font-size: 1.25rem;
+  line-height: var(--lh-tight);
+  color: #000;
 }
 
-.continue {
-  width: 190px;
-  height: 46px;
-
-  border-radius: 25px;
-
-  background: #2f70d5;
-  color: #fff;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 14px;
-  font-weight: 500;
-
-  text-decoration: none;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+.btn--continue {
+  min-width: 200px;
+  min-height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--c-primary);
+  color: var(--c-on-dark);
+  font-weight: var(--fw-medium);
 }
 
-.continue:hover {
-  background: #2462c0;
-  color: #fff;
+.btn--continue:hover { background: var(--c-primary-hover); }
 
-  transform: translateY(-1px);
-}
+/* --- Từ 1024px: panel nổi đè lên bản đồ như design ---------------------------- */
+@media (min-width: 1024px) {
+  .booth-picker__hint { display: none; }
+  .booth-picker__scroller { overflow: visible; }
+  .booth-picker__scroller > .booth-map-area { min-width: 0; }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1000px) {
-  .selection {
-    width: 380px;
+  .booth-detail {
+    position: absolute;
+    inset: 0 0 auto auto;
+    z-index: 10;
+    width: 560px;
+    height: 100%;
+    padding: 32px 48px 32px var(--space-sm);
   }
 
-  .booth-map-area::after {
-    width: 380px;
-  }
-}
-
-@media (max-width: 768px) {
-  .booth-bottom {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .booth-map-area {
-    overflow-x: auto;
-  }
-
-  /*
-   * Mobile không ép map quá nhỏ.
-   */
-  .event-map {
-    width: 100%;
-    min-width: 1000px;
-  }
-
-  .booth-overlay {
-    width: 1000px;
-    min-width: 1000px;
-
-    top: 130px;
-  }
-
-  .booth-map-area::after {
-    display: none;
-  }
-
-  .selection {
-    position: relative;
-
-    width: 100%;
-    min-height: auto;
-
-    padding: 20px;
-  }
-
-  .selection-total {
-    flex-direction: column;
-    align-items: stretch;
-
-    gap: 12px;
-  }
-
-  .continue {
-    width: 100%;
-  }
-}
-.booth-map-area {
-  overflow: hidden;
-}
-
-.selection {
-  padding: 28px 22px;
-}
-.selection h1 {
-  font-size: 28px;
-  margin: 0 0 12px;
-}
-.selection-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 12px;
-  background: #fff;
-}
-.selected-tags {
-  margin: 6px 0 10px;
-}
-.selected-tags span {
-  display: inline-block;
-  background: #a6d46e;
-  border: 1px solid #6fa53d;
-  border-radius: 6px;
-  padding: 2px 6px;
-  margin-right: 4px;
-}
-.selection-card hr {
-  border: 0;
-  border-top: 1px solid #eee;
-}
-.s-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 7px 0;
-  color: #999;
-}
-.s-row b {
-  color: #222;
-}
-.s-total {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 8px;
-  padding-top: 6px;
-}
-.s-total b {
-  font-size: 17px;
-  color: #0b5aa9;
-}
-.continue {
-  height: 42px;
-  border-radius: 22px;
-  background: #4d87dc;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 12px;
-  font-size: 13px;
-}
-@media (max-width: 1000px) {
-  .booth-top,
-  .booth-bottom {
-    grid-template-columns: 1fr;
-  }
-  .scheme,
-  .selection {
-    padding: 18px;
-  }
-  .map-top {
-    max-height: none;
-  }
-  .booth-top {
-    gap: 0;
-  }
+  .booth-detail .panel-title { margin-bottom: var(--space-md); }
 }

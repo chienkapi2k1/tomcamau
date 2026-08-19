@@ -2,71 +2,238 @@
 <html lang="vi">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Đăng ký tham quan</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/visitor.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Đăng ký tham quan — Tôm Fest Cà Mau</title>
+  <meta name="description"
+    content="Đăng ký tham quan triển lãm Tôm Fest Cà Mau 11.2026 — điền thông tin để Ban Tổ chức xác nhận qua email.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Mona+Sans:wght@600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/visitor.css">
 </head>
 
 <body>
-    <header class="site-header"><a href="index.html"><img class="site-logo" src="assets/logo-white.png"></a>
-        <nav class="site-nav"><a href="index.html">Trang Chủ</a><a href="booth.html">Khu Triển Lãm</a><a
-                href="visitor.html">Hỗ Trợ Khách Hàng</a><a href="#">Truyền Thông</a></nav>
-        <div class="site-actions"><a class="nav-pill" href="visitor.html">Tham quan</a><a class="nav-pill filled"
-                href="booth.html">Đăng ký gian hàng</a><button class="lang-pill">🇻🇳⌄</button></div>
-    </header>
-    <main class="visitor-page">
-        <div class="visitor-grid container">
-            <section class="visitor-info">
-                <h1>Đăng ký tham quan</h1>
-                <p>Vui lòng điền đầy đủ thông tin vào mẫu đăng ký bên dưới để tham gia GME 2026. Ban Tổ chức sẽ xác nhận
-                    và gửi thông tin chi tiết qua email sau khi nhận được đăng ký của bạn.</p>
-                <div class="contact-list">
-                    <div><strong>⌕</strong><span>Số điện thoại</span><b>0924 646 555</b></div>
-                    <div><strong>✉</strong><span>Email</span><b>marintech.expo@gmail.com</b></div>
-                    <div><strong>●</strong><span>Địa chỉ</span><b>Số 10 Nguyễn Công Hoan, P. Giảng Võ, Hà Nội</b></div>
+<a class="visually-hidden" href="#main">Bỏ qua điều hướng</a>
+
+<header class="site-header site-header--solid" data-header>
+  <a class="site-header__logo" href="index.html">
+    <img src="assets/tomfest/shrimp-header.svg" alt="Tôm Fest Cà Mau" width="48" height="48">
+  </a>
+
+  <div class="site-header__right">
+    <nav class="site-nav" aria-label="Điều hướng chính">
+      <a href="index.html">trang chủ</a>
+      <a href="booth.html">khu triển lãm</a>
+      <a href="visitor.html" aria-current="page">Hỗ trợ khách hàng</a>
+      <a href="index.html#news">truyền thông</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="btn btn--light" href="visitor.html">Tham quan</a>
+      <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
+      <button class="lang-switch" type="button" aria-label="Đổi ngôn ngữ">
+        <img src="assets/tomfest/flag-vn.svg" alt="" width="24" height="24">
+        <img src="assets/tomfest/chevron-down.svg" alt="" width="24" height="24">
+      </button>
+    </div>
+  </div>
+
+  <button class="nav-toggle" type="button" data-nav-toggle aria-controls="mobile-nav" aria-expanded="false"
+    aria-label="Mở menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <a href="index.html">trang chủ</a>
+  <a href="booth.html">khu triển lãm</a>
+  <a href="visitor.html">Hỗ trợ khách hàng</a>
+  <a href="index.html#news">truyền thông</a>
+  <div class="mobile-nav__actions">
+    <a class="btn btn--light" href="visitor.html">Tham quan</a>
+    <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
+  </div>
+</div>
+
+<main class="visitor" id="main">
+  <div class="container visitor__grid">
+
+    <!-- ===== Cột trái ===== -->
+    <section class="visitor__intro">
+      <div class="visitor__head">
+        <div class="visitor__lede">
+          <h1 class="visitor__title">Đăng ký tham quan</h1>
+          <p class="visitor__text">Vui lòng điền đầy đủ thông tin vào mẫu đăng ký bên dưới để tham gia GME 2026.
+            Ban Tổ chức sẽ xác nhận và gửi thông tin chi tiết qua email sau khi nhận được đăng ký của bạn.</p>
+        </div>
+
+        <ul class="contact-list">
+          <li>
+            <img src="assets/tomfest/icon-phone.svg" alt="" width="24" height="24">
+            <div>
+              <span class="contact-list__label">Số điện thoại</span>
+              <span class="contact-list__value"><a href="tel:+84924646555">0924 646 555</a></span>
+            </div>
+          </li>
+          <li>
+            <img src="assets/tomfest/icon-email.svg" alt="" width="24" height="24">
+            <div>
+              <span class="contact-list__label">Email</span>
+              <span class="contact-list__value"><a href="mailto:marintech.expo@gmail.com">marintech.expo@gmail.com</a></span>
+            </div>
+          </li>
+          <li>
+            <img src="assets/tomfest/icon-location.svg" alt="" width="24" height="24">
+            <div>
+              <span class="contact-list__label">Địa chỉ</span>
+              <span class="contact-list__value">Số 10 Nguyễn Công Hoan, P. Giảng Võ, Hà Nội</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="partners">
+        <h2 class="partners__title">Đối tác của chúng tôi</h2>
+        <div class="partners__rail">
+          <ul class="partners__track">
+            <li><img src="assets/tomfest/sponsor.png" alt="Đối tác" width="185" height="104" loading="lazy"></li>
+            <li><img src="assets/tomfest/sponsor.png" alt="Đối tác" width="185" height="104" loading="lazy"></li>
+            <li><img src="assets/tomfest/sponsor.png" alt="Đối tác" width="185" height="104" loading="lazy"></li>
+            <li><img src="assets/tomfest/sponsor.png" alt="Đối tác" width="185" height="104" loading="lazy"></li>
+            <li><img src="assets/tomfest/sponsor.png" alt="Đối tác" width="185" height="104" loading="lazy"></li>
+            <li><img src="assets/tomfest/sponsor.png" alt="Đối tác" width="185" height="104" loading="lazy"></li>
+          </ul>
+          <ul class="partners__track" aria-hidden="true">
+            <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+            <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+            <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+            <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+            <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+            <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Cột phải: form ===== -->
+    <aside class="visitor__aside">
+      <form class="visitor-form" id="visitorForm" novalidate>
+        <div class="visitor-form__body">
+          <h2 class="visitor-form__title">Thông tin đăng ký</h2>
+
+          <div class="visitor-form__fields">
+            <div class="field-group">
+              <label class="field-label" for="vFullName">Họ và tên <span class="req">*</span></label>
+              <input class="field" id="vFullName" name="fullName" required placeholder="Vd: Nguyễn Văn A">
+            </div>
+
+            <div class="form-grid form-grid--2">
+              <div class="field-group">
+                <label class="field-label" for="vEmail">Email <span class="req">*</span></label>
+                <input class="field" id="vEmail" name="email" type="email" required
+                  placeholder="Vd: nguyenvana@gmail.com">
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="vPhone">Điện thoại <span class="req">*</span></label>
+                <div class="field phone-field">
+                  <span class="phone-field__country">
+                    <img src="assets/tomfest/flag-vn.svg" alt="Việt Nam" width="20" height="20">
+                    VN
+                    <img src="assets/tomfest/chevron-down.svg" alt="" width="16" height="16">
+                  </span>
+                  <input id="vPhone" name="phone" type="tel" required placeholder="000 000 0000">
                 </div>
-                <h2>Đối tác của chúng tôi</h2>
-                <div class="partners">
-                    <div>Acheoupharm<small>DÙNG THUỐC Ở CHÂU · NGƯỜI ĐẦU THUỐC</small></div>
-                    <div>Acheoupharm<small>DÙNG THUỐC Ở CHÂU · NGƯỜI ĐẦU THUỐC</small></div>
-                    <div>Acheoupharm<small>DÙNG THUỐC Ở CHÂU · NGƯỜI ĐẦU THUỐC</small></div>
-                    <div>Acheoupharm<small>DÙNG THUỐC Ở CHÂU · NGƯỜI ĐẦU THUỐC</small></div>
-                </div>
-            </section>
-            <section class="card visitor-form">
-                <h2>Thông tin đăng ký</h2><label class="required">Họ và tên</label><input class="field"
-                    placeholder="Vd: Nguyễn Văn A">
-                <div class="two-col">
-                    <div><label class="required">Email</label><input class="field"
-                            placeholder="Vd: nguyenvana@gmail.com"></div>
-                    <div><label class="required">Điện thoại</label><input class="field"
-                            placeholder="🇻🇳 VN    000 000 0000"></div>
-                    <div><label class="required">Công ty/ Tổ chức</label><input class="field"
-                            placeholder="Tên công ty, tổ chức"></div>
-                    <div><label class="required">Lĩnh vực hoạt động</label><select class="field">
-                            <option>Lĩnh vực</option>
-                        </select></div>
-                </div><label class="participation-title">Hình thức tham gia</label>
-                <div class="participation"><label><input type="radio" checked name="join"> Khách tham
-                        quan</label><label><input type="radio" name="join"> Doanh nghiệp trưng bày gian
-                        hàng</label><label><input type="radio" name="join"> Diễn giả/ Đối tác</label></div><button
-                    class="primary register">Đăng ký</button>
-            </section>
+              </div>
+            </div>
+
+            <div class="form-grid form-grid--2">
+              <div class="field-group">
+                <label class="field-label" for="vCompany">Công ty/ Tổ chức <span class="req">*</span></label>
+                <input class="field" id="vCompany" name="company" required placeholder="Tên công ty, tổ chức">
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="vIndustry">Lĩnh vực hoạt động <span class="req">*</span></label>
+                <select class="field" id="vIndustry" name="industry" required>
+                  <option value="" selected>Lĩnh vực</option>
+                  <option value="nuoi-trong">Nuôi trồng thủy sản</option>
+                  <option value="che-bien">Chế biến &amp; xuất khẩu</option>
+                  <option value="thiet-bi">Thiết bị &amp; công nghệ</option>
+                  <option value="thuc-an">Thức ăn &amp; chế phẩm sinh học</option>
+                  <option value="logistics">Logistics &amp; chuỗi cung ứng</option>
+                  <option value="khac">Khác</option>
+                </select>
+              </div>
+            </div>
+
+            <fieldset class="field-group">
+              <legend class="field-label">Hình thức tham gia</legend>
+              <div class="radio-set">
+                <label class="radio-row">
+                  <input type="radio" name="joinType" value="visitor" checked>
+                  Khách tham quan
+                </label>
+                <label class="radio-row">
+                  <input type="radio" name="joinType" value="exhibitor">
+                  Doanh nghiệp trưng bày gian hàng
+                </label>
+                <label class="radio-row">
+                  <input type="radio" name="joinType" value="speaker">
+                  Diễn giả/ Đối tác
+                </label>
+              </div>
+            </fieldset>
+          </div>
         </div>
-    </main>
-    <footer class="site-footer">
-        <div class="footer-brand"><img class="footer-logo" src="assets/logo-blue.png">
-            <nav class="footer-nav"><a href="index.html">Trang chủ</a><a href="booth.html">Khu triển lãm</a><a
-                    href="#">Truyền thông</a><a href="visitor.html">Hỗ trợ khách hàng</a></nav>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-contact"><span>♧ &nbsp;0924 646 555</span><span>● &nbsp;
-                    facebook.com/marintechexpo</span><span>✉ &nbsp; marintech.expo@gmail.com</span></div><span>© 2026
-                TomFestCaMau</span>
-        </div>
-    </footer>
+
+        <p class="visitor-form__status" id="visitorStatus" role="status" hidden></p>
+
+        <button class="visitor-form__submit" type="submit">Đăng ký</button>
+      </form>
+    </aside>
+  </div>
+</main>
+
+<!-- ================= Footer ================= -->
+<footer class="site-footer">
+  <img class="site-footer__wave" src="assets/tomfest/footer-wave.svg" alt="" aria-hidden="true">
+
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <img class="site-footer__logo" src="assets/tomfest/shrimp-footer.svg" alt="Tôm Fest Cà Mau" width="177"
+        height="177">
+      <nav class="footer-nav" aria-label="Điều hướng chân trang">
+        <a href="index.html">Trang chủ</a>
+        <a href="booth.html">Khu triển lãm</a>
+        <a href="index.html#news">Truyền thông</a>
+        <a href="visitor.html">Hỗ trợ khách hàng</a>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <hr class="hairline">
+      <div class="footer-meta">
+        <ul class="footer-contact">
+          <li><img src="assets/tomfest/icon-phone.svg" alt="Điện thoại" width="24" height="24"><a
+            href="tel:+84924646555">0924 646 555</a></li>
+          <li><img src="assets/tomfest/icon-facebook.svg" alt="Facebook" width="24" height="24"><a
+            href="https://facebook.com/marintechexpo" rel="noopener">facebook.com/marintechexpo</a></li>
+          <li><img src="assets/tomfest/icon-email.svg" alt="Email" width="24" height="24"><a
+            href="mailto:marintech.expo@gmail.com">marintech.expo@gmail.com</a></li>
+        </ul>
+        <p class="footer-copy">© 2026 TomFestCaMau</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/form-validate.js" defer></script>
+<script src="assets/js/visitor.js" defer></script>
 </body>
 
 </html>

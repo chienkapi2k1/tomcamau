@@ -2,174 +2,324 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Tôm Fest Cà Mau</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="css/common.css">
+  <meta name="description"
+    content="Triển lãm Tôm Fest Cà Mau 11.2026 — nơi hội tụ doanh nghiệp, công nghệ và khách tham quan chuyên ngành thủy sản.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;600;700&family=Mona+Sans:wght@600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-  <header class="site-header">
-    <a class="logo" href="#top"><img src="https://www.figma.com/api/mcp/asset/8ddfd130-f4d3-4063-8fcd-573c4ea7f40a.svg"
-        alt="Tôm Fest"></a>
-    <nav>
-      <a href="#top">Trang chủ</a>
-      <a href="/booth.html">Khu triển lãm</a>
-      <a href="/visitor.html">Hỗ trợ khách hàng</a>
-      <a href="#news">Truyền thông</a>
+<a class="visually-hidden" href="#main">Bỏ qua điều hướng</a>
+
+<header class="site-header" data-header>
+  <a class="site-header__logo" href="index.html">
+    <img src="assets/tomfest/shrimp-header.svg" alt="Tôm Fest Cà Mau" width="48" height="48">
+  </a>
+
+  <div class="site-header__right">
+    <nav class="site-nav" aria-label="Điều hướng chính">
+      <a href="index.html">trang chủ</a>
+      <a href="booth.html">khu triển lãm</a>
+      <a href="visitor.html">Hỗ trợ khách hàng</a>
+      <a href="#news">truyền thông</a>
     </nav>
-    <div class="header-actions">
-      <a class="btn btn-light" href="#visit">Tham quan</a>
-      <a class="btn btn-primary" href="#booth">Đăng ký gian hàng</a>
-      <button class="language"><img src="https://www.figma.com/api/mcp/asset/69847365-716c-4180-bfb9-c81f9cc9042b.svg"
-          alt="VI"><img src="https://www.figma.com/api/mcp/asset/91912ddc-1200-492a-8ef4-c28c6780fa49.svg"
-          alt=""></button>
+
+    <div class="site-header__actions">
+      <a class="btn btn--light" href="visitor.html">Tham quan</a>
+      <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
+      <button class="lang-switch" type="button" aria-label="Đổi ngôn ngữ">
+        <img src="assets/tomfest/flag-vn.svg" alt="" width="24" height="24">
+        <img src="assets/tomfest/chevron-down.svg" alt="" width="24" height="24">
+      </button>
     </div>
-  </header>
+  </div>
 
-  <main id="top">
-    <section class="hero">
-      <img class="hero-bg" src="https://www.figma.com/api/mcp/asset/70155c6b-9ef2-424f-864b-a775f8b126bb.png" alt="">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="eyebrow">Triển lãm</div>
-        <h1>Tôm Fest Cà Mau</h1>
-        <img class="shrimp-large" src="https://www.figma.com/api/mcp/asset/777d436e-2dfe-4f31-a90a-1f2f64073cc6.svg"
-          alt="">
-        <div class="date">
-          <img src="https://www.figma.com/api/mcp/asset/eb607bd6-42f9-47ed-ad1c-e57491c7ccff.svg" alt="">
-          <span>11.2026</span>
+  <button class="nav-toggle" type="button" data-nav-toggle aria-controls="mobile-nav" aria-expanded="false"
+    aria-label="Mở menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <a href="index.html">trang chủ</a>
+  <a href="booth.html">khu triển lãm</a>
+  <a href="visitor.html">Hỗ trợ khách hàng</a>
+  <a href="#news">truyền thông</a>
+  <div class="mobile-nav__actions">
+    <a class="btn btn--light" href="visitor.html">Tham quan</a>
+    <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <img class="hero__bg" src="assets/tomfest/hero.jpg" alt="" fetchpriority="high">
+
+    <div class="hero__content">
+      <div>
+        <p class="hero__kicker">Triển lãm</p>
+        <h1 class="hero__title">Tôm Fest Cà Mau</h1>
+      </div>
+
+      <img class="hero__mark" src="assets/tomfest/shrimp-hero.svg" alt="" width="193" height="193">
+
+      <div class="hero__date">
+        <img src="assets/tomfest/hero-wave-small.svg" alt="" width="167" height="44">
+        <span>11.2026</span>
+      </div>
+
+      <div class="hero__actions">
+        <a class="btn btn--light" href="visitor.html">Tham quan</a>
+        <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
+      </div>
+    </div>
+
+    <img class="hero__wave" src="assets/tomfest/hero-wave.svg" alt="" aria-hidden="true">
+  </section>
+
+  <!-- ================= Về chúng tôi ================= -->
+  <section class="about section" id="about">
+    <div class="container about__grid">
+      <div class="about__intro">
+        <h2 class="section-head__title">Về chúng tôi</h2>
+        <p class="section-head__lead">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
+          vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
+          ullamcorper odio sed lectus. Fusce ullamcorper felis eu et nibh dis accumsan in. Cursus porta massa elit
+          amet blandit.</p>
+      </div>
+
+      <dl class="stats">
+        <div class="stat">
+          <dd class="stat__value">250+</dd>
+          <dt class="stat__label">Gian hàng trưng bày</dt>
         </div>
-        <div class="hero-actions">
-          <a class="btn btn-light" href="#visit">Tham quan</a>
-          <a class="btn btn-primary" href="#booth">Đăng ký gian hàng</a>
+        <div class="stat">
+          <dd class="stat__value">10.000+</dd>
+          <dt class="stat__label">Khách tham quan chuyên ngành</dt>
         </div>
-      </div>
-      <img class="hero-wave" src="https://www.figma.com/api/mcp/asset/47657da1-aa57-4e33-a22e-d636ccab46bf.svg" alt="">
-    </section>
-
-    <section class="about section">
-      <div class="about-copy">
-        <h2>Về chúng tôi</h2>
-        <p>Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus vehicula. Fermentum nulla diam eget
-          sed tincidunt velit lacus tristique. Mi nullam vitae volutpat ullamcorper odio sed lectus. Fusce ullamcorper
-          felis eu et nibh dis accumsan in. Cursus porta massa elit amet blandit.</p>
-      </div>
-      <div class="stats">
-        <div><strong>250+</strong><span>Gian hàng trưng bày</span></div>
-        <div><strong>10.000+</strong><span>Khách tham quan chuyên ngành</span></div>
-        <div><strong>30+</strong><span>Quốc gia tham dự</span></div>
-        <div><strong>600+</strong><span>Bài báo liên quan</span></div>
-      </div>
-    </section>
-
-    <section class="brand-strip">
-      <div class="brand-line"></div>
-      <div class="brand-row">
-        <img src="https://www.figma.com/api/mcp/asset/b8b578c7-1df2-4c77-b9bd-92efced6af86.png" alt="">
-        <img src="https://www.figma.com/api/mcp/asset/b8b578c7-1df2-4c77-b9bd-92efced6af86.png" alt="">
-        <img src="https://www.figma.com/api/mcp/asset/b8b578c7-1df2-4c77-b9bd-92efced6af86.png" alt="">
-        <img src="https://www.figma.com/api/mcp/asset/b8b578c7-1df2-4c77-b9bd-92efced6af86.png" alt="">
-        <img src="https://www.figma.com/api/mcp/asset/b8b578c7-1df2-4c77-b9bd-92efced6af86.png" alt="">
-        <img src="https://www.figma.com/api/mcp/asset/b8b578c7-1df2-4c77-b9bd-92efced6af86.png" alt="">
-        <img src="https://www.figma.com/api/mcp/asset/b8b578c7-1df2-4c77-b9bd-92efced6af86.png" alt="">
-      </div>
-      <div class="brand-line"></div>
-    </section>
-
-    <section class="events section" id="events">
-      <div class="section-heading">
-        <h2>Các sự kiện chính</h2>
-        <p>Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus vehicula. Fermentum nulla diam eget
-          sed tincidunt velit lacus tristique. Mi nullam vitae volutpat ullamcorper odio sed lectus.</p>
-      </div>
-      <div class="events-grid">
-        <img class="events-photo" src="https://www.figma.com/api/mcp/asset/5718e5a0-6427-442a-9c7b-e6c7b588a407.png"
-          alt="">
-        <div class="event-list">
-          <article><span>01</span>
-            <div>
-              <h3>Hoạt động 1</h3>
-              <p>Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus vehicula. Fermentum nulla diam
-                eget sed tincidunt velit lacus tristique.</p>
-            </div>
-          </article>
-          <article><span>02</span>
-            <div>
-              <h3>Hoạt động 2</h3>
-              <p>Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus vehicula. Fermentum nulla diam
-                eget sed tincidunt velit lacus tristique.</p>
-            </div>
-          </article>
-          <article><span>03</span>
-            <div>
-              <h3>Hoạt động 3</h3>
-              <p>Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus vehicula. Fermentum nulla diam
-                eget sed tincidunt velit lacus tristique.</p>
-            </div>
-          </article>
-          <article><span>04</span>
-            <div>
-              <h3>Hoạt động 4</h3>
-              <p>Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus vehicula. Fermentum nulla diam
-                eget sed tincidunt velit lacus tristique.</p>
-            </div>
-          </article>
+        <div class="stat">
+          <dd class="stat__value">30+</dd>
+          <dt class="stat__label">Quốc gia tham dự</dt>
         </div>
-      </div>
-    </section>
+        <div class="stat">
+          <dd class="stat__value">600+</dd>
+          <dt class="stat__label">Bài báo liên quan</dt>
+        </div>
+      </dl>
+    </div>
+  </section>
 
-    <section class="news section" id="news">
-      <div class="section-heading">
-        <h2>Tin tức và sự kiện</h2>
-        <p>Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus vehicula. Fermentum nulla diam eget
-          sed tincidunt velit lacus tristique.</p>
+  <!-- ================= Nhà tài trợ ================= -->
+  <section class="sponsors" aria-label="Nhà tài trợ">
+    <div class="sponsors__rail">
+      <ul class="sponsors__track">
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="Nhà tài trợ" width="185" height="104" loading="lazy"></li>
+      </ul>
+      <ul class="sponsors__track" aria-hidden="true">
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+        <li><img src="assets/tomfest/sponsor.png" alt="" width="185" height="104" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= Các sự kiện chính ================= -->
+  <section class="events section" id="events">
+    <div class="container events__inner">
+      <div class="section-head">
+        <h2 class="section-head__title">Các sự kiện chính</h2>
+        <p class="section-head__lead">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
+          vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
+          ullamcorper odio sed lectus. Fusce ullamcorper felis eu et nibh dis accumsan in. Cursus porta massa elit
+          amet blandit.</p>
       </div>
-      <div class="news-grid">
-        <article class="news-feature">
-          <img src="https://www.figma.com/api/mcp/asset/5718e5a0-6427-442a-9c7b-e6c7b588a407.png" alt="">
-          <div class="news-body">
-            <time>◷ &nbsp;12-9-2026</time>
-            <h3>Lorem ipsum dolor sit amet consectetur. <span>↗</span></h3>
-            <p>Lorem ipsum dolor sit amet consectetur. Vitae mi massa et venenatis mauris ut. Lectus sit sed porttitor
-              duis sapien egestas ac consequat ac.</p>
-          </div>
+
+      <div class="events__body">
+        <figure class="events__figure">
+          <img class="events__photo" src="assets/tomfest/photo.jpg" alt="Không gian sự kiện Tôm Fest Cà Mau"
+            loading="lazy">
+        </figure>
+
+        <ol class="events__list">
+          <li class="event">
+            <img class="event__num" src="assets/tomfest/num-01.svg" alt="01" width="196" height="119">
+            <div class="event__text">
+              <h3 class="event__title">Hoạt động 1</h3>
+              <p class="event__desc">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
+                vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
+                ullamcorper odio sed lectus.</p>
+            </div>
+          </li>
+          <li class="event">
+            <img class="event__num" src="assets/tomfest/num-02.svg" alt="02" width="196" height="119">
+            <div class="event__text">
+              <h3 class="event__title">Hoạt động 2</h3>
+              <p class="event__desc">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
+                vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
+                ullamcorper odio sed lectus.</p>
+            </div>
+          </li>
+          <li class="event">
+            <img class="event__num" src="assets/tomfest/num-03.svg" alt="03" width="196" height="119">
+            <div class="event__text">
+              <h3 class="event__title">Hoạt động 3</h3>
+              <p class="event__desc">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
+                vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
+                ullamcorper odio sed lectus.</p>
+            </div>
+          </li>
+          <li class="event">
+            <img class="event__num" src="assets/tomfest/num-04.svg" alt="04" width="196" height="119">
+            <div class="event__text">
+              <h3 class="event__title">Hoạt động 4</h3>
+              <p class="event__desc">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
+                vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
+                ullamcorper odio sed lectus.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Tin tức và sự kiện ================= -->
+  <section class="news section" id="news">
+    <div class="container news__inner">
+      <div class="section-head">
+        <h2 class="section-head__title section-head__title--bold">Tin tức và sự kiện</h2>
+        <p class="section-head__lead">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
+          vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique.</p>
+      </div>
+
+      <div class="news__grid">
+        <article class="news__feature">
+          <a class="news-card" href="#news">
+            <img class="news-card__photo" src="assets/tomfest/photo.jpg" alt="" loading="lazy">
+            <div class="news-card__body">
+              <p class="news-card__date">
+                <img src="assets/tomfest/icon-time.svg" alt="" width="24" height="24">
+                <time datetime="2026-09-12">12-9-2026</time>
+              </p>
+              <div class="news-card__head">
+                <h3 class="news-card__title">Lorem ipsum dolor sit amet consectetur.</h3>
+                <img class="arrow-icon" src="assets/tomfest/icon-arrow.svg" alt="" width="40" height="40">
+              </div>
+              <p class="news-card__desc">Lorem ipsum dolor sit amet consectetur. Vitae mi massa et venenatis mauris
+                ut. Lectus sit sed porttitor duis sapien egestas ac consequat ac.</p>
+            </div>
+          </a>
         </article>
-        <div class="news-side">
-          <article class="news-card"><img
-              src="https://www.figma.com/api/mcp/asset/5718e5a0-6427-442a-9c7b-e6c7b588a407.png" alt="">
-            <div class="news-body"><time>◷ &nbsp;12-9-2026</time>
-              <h3>Lorem ipsum dolor sit amet consectetur. <span>↗</span></h3>
-              <p>Lorem ipsum dolor sit amet consectetur. Vitae mi massa et venenatis mauris ut.</p>
-            </div>
+
+        <div class="news__side">
+          <article>
+            <a class="news-card news-card--row" href="#news">
+              <img class="news-card__photo" src="assets/tomfest/photo.jpg" alt="" loading="lazy">
+              <div class="news-card__body">
+                <p class="news-card__date">
+                  <img src="assets/tomfest/icon-time.svg" alt="" width="24" height="24">
+                  <time datetime="2026-09-12">12-9-2026</time>
+                </p>
+                <div class="news-card__head">
+                  <h3 class="news-card__title">Lorem ipsum dolor sit amet consectetur.</h3>
+                  <img class="arrow-icon" src="assets/tomfest/icon-arrow.svg" alt="" width="40" height="40">
+                </div>
+                <p class="news-card__desc">Lorem ipsum dolor sit amet consectetur. Vitae mi massa et venenatis mauris
+                  ut. Lectus sit sed porttitor duis sapien egestas ac consequat ac.</p>
+              </div>
+            </a>
           </article>
-          <article class="news-card"><img
-              src="https://www.figma.com/api/mcp/asset/5718e5a0-6427-442a-9c7b-e6c7b588a407.png" alt="">
-            <div class="news-body"><time>◷ &nbsp;12-9-2026</time>
-              <h3>Lorem ipsum dolor sit amet consectetur. <span>↗</span></h3>
-              <p>Lorem ipsum dolor sit amet consectetur. Vitae mi massa et venenatis mauris ut.</p>
-            </div>
+
+          <article>
+            <a class="news-card news-card--row" href="#news">
+              <img class="news-card__photo" src="assets/tomfest/photo.jpg" alt="" loading="lazy">
+              <div class="news-card__body">
+                <p class="news-card__date">
+                  <img src="assets/tomfest/icon-time.svg" alt="" width="24" height="24">
+                  <time datetime="2026-09-12">12-9-2026</time>
+                </p>
+                <div class="news-card__head">
+                  <h3 class="news-card__title">Lorem ipsum dolor sit amet consectetur.</h3>
+                  <img class="arrow-icon" src="assets/tomfest/icon-arrow.svg" alt="" width="40" height="40">
+                </div>
+                <p class="news-card__desc">Lorem ipsum dolor sit amet consectetur. Vitae mi massa et venenatis mauris
+                  ut. Lectus sit sed porttitor duis sapien egestas ac consequat ac.</p>
+              </div>
+            </a>
           </article>
         </div>
       </div>
-      <a class="more btn btn-primary" href="visitor.html">Xem tất cả <span>↗</span></a>
-    </section>
-  </main>
 
-  <footer id="visit">
-    <img class="footer-logo" src="https://www.figma.com/api/mcp/asset/9628a663-184a-47ce-bb43-b3b0fec2f09f.svg"
-      alt="Tôm Fest">
-    <nav><a href="#top">Trang chủ</a><a href="#events">Khu triển lãm</a><a href="#news">Truyền thông</a><a
-        href="#visit">Hỗ trợ khách hàng</a></nav>
-    <div class="footer-line"></div>
-    <div class="footer-bottom">
-      <div><span>☎ 0924 646 555</span><span>◉ facebook.com/marintechexpo</span><span>✉ marintech.expo@gmail.com</span>
-      </div>
-      <small>© 2026 TomFestCaMau</small>
+      <a class="btn btn--pill-icon" href="#news">
+        Xem tất cả
+        <img src="assets/tomfest/icon-arrow-white.svg" alt="" width="40" height="40">
+      </a>
     </div>
-  </footer>
+  </section>
+
+</main>
+
+<!-- ================= Footer ================= -->
+<footer class="site-footer">
+  <img class="site-footer__wave" src="assets/tomfest/footer-wave.svg" alt="" aria-hidden="true">
+
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <img class="site-footer__logo" src="assets/tomfest/shrimp-footer.svg" alt="Tôm Fest Cà Mau" width="177"
+        height="177">
+      <nav class="footer-nav" aria-label="Điều hướng chân trang">
+        <a href="index.html">Trang chủ</a>
+        <a href="booth.html">Khu triển lãm</a>
+        <a href="#news">Truyền thông</a>
+        <a href="visitor.html">Hỗ trợ khách hàng</a>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <hr class="hairline">
+      <div class="footer-meta">
+        <ul class="footer-contact">
+          <li><img src="assets/tomfest/icon-phone.svg" alt="Điện thoại" width="24" height="24"><a
+            href="tel:+84924646555">0924 646 555</a></li>
+          <li><img src="assets/tomfest/icon-facebook.svg" alt="Facebook" width="24" height="24"><a
+            href="https://facebook.com/marintechexpo" rel="noopener">facebook.com/marintechexpo</a></li>
+          <li><img src="assets/tomfest/icon-email.svg" alt="Email" width="24" height="24"><a
+            href="mailto:marintech.expo@gmail.com">marintech.expo@gmail.com</a></li>
+        </ul>
+        <p class="footer-copy">© 2026 TomFestCaMau</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
 </body>
 
 </html>

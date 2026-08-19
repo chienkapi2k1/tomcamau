@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Tôm Fest Cà Mau — Design tokens (global)
+   Nguồn: Figma "VNF (Copy)" — Home node 4903:251 (khung 1920px)
+   Dùng cho mọi trang: <link rel="stylesheet" href="css/tokens.css"> nạp đầu tiên.
+   Font khai báo ở <head>: Inter, Be Vietnam Pro, Mona Sans
+   ========================================================================== */
+
+:root {
+  /* --- Color: brand ------------------------------------------------------- */
+  --c-primary: #296dd2;          /* xanh chủ đạo: nút, link, icon, footer */
+  --c-primary-hover: #1f5fbe;
+  --c-primary-soft: rgb(41 109 210 / 8%);
+
+  /* --- Color: text -------------------------------------------------------- */
+  --c-ink: #0b0b0b;              /* tiêu đề, đoạn văn */
+  --c-ink-strong: #040404;       /* nhãn số liệu */
+  --c-text: rgb(0 0 0 / 86%);    /* số liệu lớn */
+  --c-on-dark: #ffffff;
+  --c-on-dark-muted: rgb(255 255 255 / 80%);
+
+  /* --- Color: surface ------------------------------------------------------ */
+  --c-bg: #fafafa;               /* nền trang + màu 2 dải sóng */
+  --c-surface: #ffffff;          /* card tin tức, footer */
+  --c-surface-alt: #fbfcfa;      /* nút đổi ngôn ngữ */
+  --c-placeholder: #d9d9d9;
+  --c-numeral: #d7d7d7;          /* số thứ tự 01–04 */
+
+  /* --- Color: phân khu gian hàng (sơ đồ triển lãm) ------------------------- */
+  --c-zone-v0: #10a000;          /* gian hàng tiêu chuẩn */
+  --c-zone-v1: #9147ff;          /* khu ẩm thực */
+  --c-zone-v2: #ffc800;          /* gian miễn phí */
+  --c-zone-v0-soft: rgb(16 160 0 / 12%);
+  --c-zone-v0-line: rgb(16 160 0 / 28%);
+  --c-zone-v0-ink: #0b7000;
+
+  /* --- Color: form (input, label, trạng thái) ------------------------------ */
+  --c-label: #0d0d0d;
+  --c-field-bg: rgb(5 5 5 / 3%);
+  --c-field-text: #0d0d0d;
+  --c-placeholder: rgb(0 0 0 / 27%);
+  --c-danger: #d03e19;
+  --c-required: #e11900;
+  --c-chip-bg: #95c766;
+  --c-chip-border: #5b9228;
+
+  /* --- Color: border ------------------------------------------------------- */
+  --c-border: #f1f1f1;
+  --c-hairline: #e3e3e3;
+  --c-border-pill: rgb(0 0 0 / 12%);
+  --c-border-card: rgb(0 0 0 / 8%);
+  --c-fill-subtle: rgb(5 5 5 / 3%);
+  --c-border-light: rgb(0 0 0 / 10%);
+  --c-border-on-dark: rgb(255 255 255 / 35%);
+  --c-hero-overlay: rgb(0 0 0 / 20%);
+
+  /* --- Typography: family --------------------------------------------------- */
+  --font-display: "Inter", "Segoe UI", system-ui, sans-serif;   /* tiêu đề */
+  --font-body: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --font-num: "Mona Sans", "Inter", system-ui, sans-serif;      /* số liệu, ngày */
+
+  /* --- Typography: weight ---------------------------------------------------- */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* --- Typography: fluid scale (393px → 1920px) ------------------------------ */
+  --fs-hero: clamp(2.5rem, 1.984rem + 2.1vw, 4.5rem);        /* 40 → 72  */
+  --fs-hero-kicker: clamp(1.125rem, 0.9rem + 0.92vw, 2rem);  /* 18 → 32  */
+  --fs-h2: clamp(1.75rem, 1.428rem + 1.31vw, 3rem);          /* 28 → 48  */
+  --fs-h3: clamp(1.5rem, 1.243rem + 1.05vw, 2.5rem);         /* 24 → 40  */
+  --fs-h4: clamp(1.125rem, 1.029rem + 0.39vw, 1.5rem);       /* 18 → 24  */
+  --fs-stat: clamp(2.5rem, -0.18rem + 6.4vw, 7.5rem);        /* 40 → 120 */
+  --fs-lead: clamp(1rem, 0.871rem + 0.52vw, 1.5rem);         /* 16 → 24  */
+  --fs-nav: clamp(1rem, 0.968rem + 0.13vw, 1.125rem);        /* 16 → 18  */
+  --fs-body: 1rem;                                            /* 16 */
+  --fs-sm: 0.875rem;                                          /* 14 */
+  --fs-label: 0.75rem;                                        /* 12 */
+  --fs-caption: 0.625rem;                                     /* 10 */
+  --fs-date: 0.875rem;
+
+  /* --- Typography: line-height & tracking ------------------------------------ */
+  --lh-tight: 1.2;
+  --lh-normal: normal;
+  --lh-body: 1.5;
+  --ls-nav: 0.6px;
+  --ls-stat: 0.52px;
+  --ls-contact: -0.0396px;
+
+  /* --- Spacing --------------------------------------------------------------- */
+  --space-3xs: 4px;
+  --space-2xs: 6px;
+  --space-xs: 9px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 44px;
+  --space-3xl: 54px;
+  --space-4xl: 60px;
+  --space-5xl: 72px;
+
+  /* Khoảng cách giữa các section: 56px (mobile) → 120px (desktop) */
+  --space-section: clamp(3.5rem, 2.53rem + 3.93vw, 7.5rem);
+
+  /* --- Layout ---------------------------------------------------------------- */
+  --content-max: 1824px;
+  --gutter: clamp(1rem, 0.485rem + 2.1vw, 3rem);   /* 16 → 48 */
+  --header-h: 64px;
+  --field-h: 40px;
+  --wave-h: clamp(48px, 9.5vw, 183px);
+  --footer-wave-h: clamp(28px, 4.9vw, 94px);
+
+  /* --- Radius ----------------------------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-input: 8px;
+  --radius-input-lg: 12px;
+  --radius-card: 16px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+
+  /* --- Elevation --------------------------------------------------------------- */
+  --shadow-card: 0 2px 16px rgb(11 11 11 / 4%);
+  --shadow-float: 0 0 6px rgb(0 0 0 / 10%);
+  --shadow-field: inset 0 0 1px 0 rgb(0 0 0 / 8%), inset 0 0 3px 0 rgb(0 0 0 / 12%);
+  --shadow-field-focus: inset 0 0 1px 0 rgb(25 74 145 / 8%), inset 0 0 3px 0 rgb(25 74 145 / 12%);
+  --shadow-header: 0 6px 24px rgb(11 11 11 / 8%);
+
+  /* --- Motion ------------------------------------------------------------------ */
+  --dur-fast: 0.15s;
+  --dur: 0.25s;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 1024px) {
+  :root { --header-h: 96px; }
+}

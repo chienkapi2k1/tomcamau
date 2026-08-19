@@ -2,103 +2,304 @@
 <html lang="vi">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Thông tin đăng ký</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/payment.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thông tin đăng ký — Tôm Fest Cà Mau</title>
+  <meta name="description" content="Điền thông tin công ty và cá nhân để hoàn tất đăng ký gian hàng Tôm Fest Cà Mau.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Mona+Sans:wght@600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/payment.css">
 </head>
 
 <body>
-    <header class="site-header">
-        <a href="index.html"><img class="site-logo" src="assets/logo-white.png"></a>
-        <nav class="site-nav"><a href="index.html">Trang Chủ</a><a href="booth.html">Khu Triển Lãm</a><a
-                href="visitor.html">Hỗ Trợ Khách Hàng</a><a href="#">Truyền Thông</a></nav>
-        <div class="site-actions"><a class="nav-pill" href="visitor.html">Tham quan</a><a class="nav-pill filled"
-                href="booth.html">Đăng ký gian hàng</a><button class="lang-pill">🇻🇳⌄</button></div>
-    </header>
-    <main class="payment-page">
-        <div class="payment-wrap">
-            <a class="back-link" href="booth.html">← Chọn gian hàng</a>
-            <h1>Thông tin đăng ký</h1>
-            <div class="payment-grid">
-                <form class="form-stack">
-                    <section class="card form-card">
-                        <h3>Thông tin gian hàng</h3>
-                        <label class="required">Chọn gian hàng</label>
-                        <div class="radio-grid"><label><input type="radio" name="boothType" checked> Dùng gian hàng tiêu
-                                chuẩn</label><label><input type="radio" name="boothType"> Tự dựng gian hàng</label>
-                        </div>
-                    </section>
-                    <section class="card form-card">
-                        <h3>Thông tin công ty</h3>
-                        <div class="two-col">
-                            <div><label class="required">Tên công ty</label><input class="field"
-                                    value="Công ty TNHH Giải pháp ABC"></div>
-                            <div><label class="required">Mã số thuế</label><input class="field" value="0101234567">
-                            </div>
-                            <div><label class="required">Sản phẩm/ Dịch vụ</label><input class="field focus-field"
-                                    value="Phần mềm quản lý"></div>
-                            <div><label class="required">Lĩnh vực kinh doanh</label><input class="field error-field"
-                                    placeholder="Vd: Công nghệ thông tin, Bán lẻ..."><small class="error-text">ⓘ Bạn
-                                    chưa nhập thông tin</small></div>
-                        </div>
-                        <label class="required upload-label">Logo Cty</label>
-                        <div class="upload-box">♧ &nbsp; Kéo & thả file vào đây, hoặc Bấm để chọn file</div>
-                        <div class="uploaded-file"><b>Tên logo cty</b><span>12.5MB</span><b>×</b></div>
-                    </section>
-                    <div class="two-col compact">
-                        <section class="card form-card">
-                            <h3>Hội viên</h3><label>Hội viên</label><input class="field" placeholder="Vd: 098765">
-                        </section>
-                        <section class="card form-card">
-                            <h3>Mã giới thiệu</h3><label>Mã giới thiệu</label><input class="field"
-                                placeholder="Vd: 098765">
-                        </section>
-                    </div>
-                    <section class="card form-card">
-                        <h3>Thông tin cá nhân</h3>
-                        <div class="two-col">
-                            <div><label class="required">Họ và tên</label><input class="field"
-                                    placeholder="Vd: Nguyễn Văn A"></div>
-                            <div><label class="required">Chức vụ</label><input class="field" placeholder="Nhập chức vụ">
-                            </div>
-                            <div><label class="required">Email</label><input class="field"
-                                    placeholder="Vd: nguyenvana@gmail.com"></div>
-                            <div><label class="required">Điện thoại</label><input class="field"
-                                    placeholder="🇻🇳 VN    000 000 0000"></div>
-                            <div><label class="required">Địa chỉ</label><input class="field"
-                                    placeholder="Vd: Số 123 Lê Lợi, P. Bến Thành, Q.1"></div>
-                            <div><label class="required">Điện thoại</label><select class="field">
-                                    <option>Chọn quốc gia</option>
-                                </select></div>
-                        </div>
-                    </section>
-                </form>
-                <aside class="card order-card">
-                    <h3>Thông tin gian hàng</h3><b>Danh sách gian hàng đã chọn:</b>
-                    <div class="tags"><span>A1</span><span>A2</span></div>
-                    <hr>
-                    <div class="order-row"><span>Tổng tiền</span><b>0 đ</b></div>
-                    <div class="order-row"><span>Giảm giá gian hàng</span><b>0 đ</b></div>
-                    <div class="order-row"><span>Giảm giá hội viên</span><b>0 đ</b></div>
-                    <div class="order-total"><span>Cần thanh toán</span><b>0 đ</b></div>
-                    <a class="order-btn" href="#">Đặt gian hàng <span>→</span></a>
-                </aside>
+<a class="visually-hidden" href="#main">Bỏ qua điều hướng</a>
+
+<header class="site-header site-header--solid" data-header>
+  <a class="site-header__logo" href="index.html">
+    <img src="assets/tomfest/shrimp-header.svg" alt="Tôm Fest Cà Mau" width="48" height="48">
+  </a>
+
+  <div class="site-header__right">
+    <nav class="site-nav" aria-label="Điều hướng chính">
+      <a href="index.html">trang chủ</a>
+      <a href="booth.html">khu triển lãm</a>
+      <a href="visitor.html">Hỗ trợ khách hàng</a>
+      <a href="index.html#news">truyền thông</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="btn btn--light" href="visitor.html">Tham quan</a>
+      <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
+      <button class="lang-switch" type="button" aria-label="Đổi ngôn ngữ">
+        <img src="assets/tomfest/flag-vn.svg" alt="" width="24" height="24">
+        <img src="assets/tomfest/chevron-down.svg" alt="" width="24" height="24">
+      </button>
+    </div>
+  </div>
+
+  <button class="nav-toggle" type="button" data-nav-toggle aria-controls="mobile-nav" aria-expanded="false"
+    aria-label="Mở menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <a href="index.html">trang chủ</a>
+  <a href="booth.html">khu triển lãm</a>
+  <a href="visitor.html">Hỗ trợ khách hàng</a>
+  <a href="index.html#news">truyền thông</a>
+  <div class="mobile-nav__actions">
+    <a class="btn btn--light" href="visitor.html">Tham quan</a>
+    <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
+  </div>
+</div>
+
+<main class="payment" id="main">
+  <div class="payment__inner">
+
+    <a class="back-pill" href="booth.html">
+      <img src="assets/tomfest/icon-arrow-left.svg" alt="" width="20" height="20">
+      Chọn gian hàng
+    </a>
+
+    <div class="payment__layout">
+      <form class="payment__main" id="registerForm" novalidate>
+        <h1 class="payment__title">Thông tin đăng ký</h1>
+
+        <!-- ===== Thông tin gian hàng ===== -->
+        <section class="form-card">
+          <h2 class="form-card__title">Thông tin gian hàng</h2>
+
+          <fieldset class="field-group">
+            <legend class="field-label">Chọn gian hàng <span class="req">*</span></legend>
+            <div class="radio-set">
+              <label class="radio-row">
+                <input type="radio" name="boothType" value="standard" checked>
+                Dùng gian hàng tiêu chuẩn
+              </label>
+              <label class="radio-row">
+                <input type="radio" name="boothType" value="custom">
+                Tự dựng gian hàng
+              </label>
             </div>
+          </fieldset>
+        </section>
+
+        <!-- ===== Thông tin công ty ===== -->
+        <section class="form-card">
+          <h2 class="form-card__title">Thông tin công ty</h2>
+
+          <div class="form-grid form-grid--2">
+            <div class="field-group">
+              <label class="field-label" for="companyName">Tên công ty <span class="req">*</span></label>
+              <input class="field" id="companyName" name="companyName" required value="Công ty TNHH Giải pháp ABC">
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="taxCode">Mã số thuế <span class="req">*</span></label>
+              <input class="field" id="taxCode" name="taxCode" required value="0101234567" inputmode="numeric">
+            </div>
+          </div>
+
+          <div class="form-grid form-grid--2">
+            <div class="field-group">
+              <label class="field-label" for="product">Sản phẩm/ Dịch vụ <span class="req">*</span></label>
+              <input class="field" id="product" name="product" required value="Phần mềm quản lý">
+            </div>
+            <div class="field-group is-error">
+              <label class="field-label" for="industry">Lĩnh vực kinh doanh <span class="req">*</span></label>
+              <input class="field" id="industry" name="industry" required aria-describedby="industryError"
+                placeholder="Vd: Công nghệ thông tin, Bán lẻ...">
+              <p class="field-error" id="industryError">
+                <img src="assets/tomfest/icon-alert.svg" alt="" width="12" height="12">
+                Bạn chưa nhập thông tin
+              </p>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <span class="field-label">Logo Cty <span class="req">*</span></span>
+            <label class="field upload-field">
+              <img src="assets/tomfest/icon-upload.svg" alt="" width="20" height="20">
+              <span>Kéo &amp; thả file vào đây, hoặc Bấm để chọn file</span>
+              <input type="file" name="logo" accept="image/*" id="logoInput">
+            </label>
+            <div class="upload-file" id="logoPreview" hidden>
+              <div class="upload-file__meta">
+                <span class="upload-file__name">Tên logo cty</span>
+                <span class="upload-file__size">12.5MB</span>
+              </div>
+              <button class="upload-file__remove" type="button" aria-label="Xoá file" id="logoRemove">
+                <img src="assets/tomfest/icon-close.svg" alt="" width="20" height="20">
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Hội viên / Mã giới thiệu ===== -->
+        <div class="payment__pair">
+          <section class="form-card">
+            <h2 class="form-card__title">Hội viên</h2>
+            <div class="field-group">
+              <label class="field-label" for="member">Hội viên</label>
+              <input class="field" id="member" name="member" placeholder="Vd: 098765">
+            </div>
+          </section>
+
+          <section class="form-card">
+            <h2 class="form-card__title">Mã giới thiệu</h2>
+            <div class="field-group">
+              <label class="field-label" for="referral">Mã giới thiệu</label>
+              <input class="field" id="referral" name="referral" placeholder="Vd: 098765">
+            </div>
+          </section>
         </div>
-    </main>
-    <footer class="site-footer">
-        <div class="footer-brand"><img class="footer-logo" src="assets/logo-blue.png">
-            <nav class="footer-nav"><a href="index.html">Trang chủ</a><a href="booth.html">Khu triển lãm</a><a
-                    href="#">Truyền thông</a><a href="visitor.html">Hỗ trợ khách hàng</a></nav>
+
+        <!-- ===== Thông tin cá nhân ===== -->
+        <section class="form-card">
+          <h2 class="form-card__title">Thông tin cá nhân</h2>
+
+          <div class="form-grid form-grid--2">
+            <div class="field-group">
+              <label class="field-label" for="fullName">Họ và tên <span class="req">*</span></label>
+              <input class="field" id="fullName" name="fullName" required placeholder="Vd: Nguyễn Văn A">
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="position">Chức vụ <span class="req">*</span></label>
+              <input class="field" id="position" name="position" required placeholder="Nhập chức vụ">
+            </div>
+          </div>
+
+          <div class="form-grid form-grid--2">
+            <div class="field-group">
+              <label class="field-label" for="email">Email <span class="req">*</span></label>
+              <input class="field" id="email" name="email" type="email" required
+                placeholder="Vd: nguyenvana@gmail.com">
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="phone">Điện thoại <span class="req">*</span></label>
+              <div class="field phone-field">
+                <span class="phone-field__country">
+                  <img src="assets/tomfest/flag-vn.svg" alt="Việt Nam" width="20" height="20">
+                  VN
+                  <img src="assets/tomfest/chevron-down.svg" alt="" width="16" height="16">
+                </span>
+                <input id="phone" name="phone" type="tel" required placeholder="000 000 0000">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid form-grid--2">
+            <div class="field-group">
+              <label class="field-label" for="address">Địa chỉ <span class="req">*</span></label>
+              <input class="field" id="address" name="address" required
+                placeholder="Vd: Số 123 Lê Lợi, P. Bến Thành, Q.1">
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="country">Quốc gia <span class="req">*</span></label>
+              <select class="field" id="country" name="country" required>
+                <option value="" selected>Chọn quốc gia</option>
+                <option value="VN">Việt Nam</option>
+                <option value="TH">Thái Lan</option>
+                <option value="ID">Indonesia</option>
+                <option value="IN">Ấn Độ</option>
+                <option value="CN">Trung Quốc</option>
+                <option value="JP">Nhật Bản</option>
+                <option value="KR">Hàn Quốc</option>
+                <option value="other">Khác</option>
+              </select>
+            </div>
+          </div>
+        </section>
+      </form>
+
+      <!-- ===== Tóm tắt đơn hàng ===== -->
+      <aside class="payment__aside">
+        <div class="order-card">
+          <h2 class="order-card__title">Thông tin gian hàng</h2>
+
+          <div class="order-card__booths">
+            <p class="order-card__label">Danh sách gian hàng đã chọn:</p>
+            <div class="booth-chips" id="boothChips">
+              <span class="is-empty">Chưa chọn gian hàng</span>
+            </div>
+          </div>
+
+          <hr class="hairline">
+
+          <div class="order-row">
+            <span>Tổng tiền</span>
+            <b id="orderSubtotal">0 đ</b>
+          </div>
+
+          <hr class="hairline">
+
+          <div class="order-card__rows">
+            <div class="order-row"><span>Giảm giá gian hàng</span><b>0 đ</b></div>
+            <div class="order-row"><span>Giảm giá hội viên</span><b>0 đ</b></div>
+          </div>
+
+          <hr class="hairline">
+
+          <div class="order-row order-row--total">
+            <span>Cần thanh toán</span>
+            <b id="orderTotal">0 đ</b>
+          </div>
+
+          <hr class="hairline">
+
+          <button class="order-card__submit" type="submit" form="registerForm">
+            Đặt gian hàng
+            <img src="assets/tomfest/icon-arrow-right.svg" alt="" width="20" height="20">
+          </button>
+
+          <p class="order-card__status" id="orderStatus" role="status" hidden></p>
         </div>
-        <div class="footer-bottom">
-            <div class="footer-contact"><span>♧ &nbsp;0924 646 555</span><span>● &nbsp;
-                    facebook.com/marintechexpo</span><span>✉ &nbsp; marintech.expo@gmail.com</span></div><span>© 2026
-                TomFestCaMau</span>
-        </div>
-    </footer>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- ================= Footer ================= -->
+<footer class="site-footer">
+  <img class="site-footer__wave" src="assets/tomfest/footer-wave.svg" alt="" aria-hidden="true">
+
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <img class="site-footer__logo" src="assets/tomfest/shrimp-footer.svg" alt="Tôm Fest Cà Mau" width="177"
+        height="177">
+      <nav class="footer-nav" aria-label="Điều hướng chân trang">
+        <a href="index.html">Trang chủ</a>
+        <a href="booth.html">Khu triển lãm</a>
+        <a href="index.html#news">Truyền thông</a>
+        <a href="visitor.html">Hỗ trợ khách hàng</a>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <hr class="hairline">
+      <div class="footer-meta">
+        <ul class="footer-contact">
+          <li><img src="assets/tomfest/icon-phone.svg" alt="Điện thoại" width="24" height="24"><a
+            href="tel:+84924646555">0924 646 555</a></li>
+          <li><img src="assets/tomfest/icon-facebook.svg" alt="Facebook" width="24" height="24"><a
+            href="https://facebook.com/marintechexpo" rel="noopener">facebook.com/marintechexpo</a></li>
+          <li><img src="assets/tomfest/icon-email.svg" alt="Email" width="24" height="24"><a
+            href="mailto:marintech.expo@gmail.com">marintech.expo@gmail.com</a></li>
+        </ul>
+        <p class="footer-copy">© 2026 TomFestCaMau</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/form-validate.js" defer></script>
+<script src="assets/js/payment.js" defer></script>
 </body>
 
 </html>

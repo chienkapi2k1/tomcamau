@@ -1,0 +1,307 @@
+/* ==========================================================================
+   Tôm Fest Cà Mau — Hệ thống form dùng chung (payment, visitor, …)
+   Nguồn: Figma node 5162:20505
+   Yêu cầu: css/tokens.css → css/base.css → file này.
+   ========================================================================== */
+
+/* --- Thẻ nhóm trường ------------------------------------------------------- */
+.form-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  border: 1px solid var(--c-border-card);
+  border-radius: var(--radius-card);
+  background: var(--c-surface);
+}
+
+.form-card__title {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--c-label);
+}
+
+/* Lưới 2 cột, gộp 1 cột ở màn hẹp */
+.form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-sm);
+}
+
+@media (min-width: 640px) {
+  .form-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* --- Một trường ------------------------------------------------------------ */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
+/* <legend> được trình duyệt render tách khỏi hộp nội dung của <fieldset>,
+   nên nó không nhận `gap` của flex container — bù bằng margin cho bằng gap. */
+.field-group > legend {
+  float: none;
+  margin-bottom: var(--space-xs);
+  padding: 0;
+}
+
+.field-label {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-label);
+  line-height: var(--lh-normal);
+  color: var(--c-label);
+}
+
+.field-label .req { color: var(--c-required); }
+
+/* Vỏ trường: nền, viền, đổ bóng trong — dùng chung cho input/select/upload */
+.field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  width: 100%;
+  min-height: var(--field-h);
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-input);
+  background: var(--c-field-bg);
+  box-shadow: var(--shadow-field);
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--c-field-text);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+input.field,
+select.field,
+textarea.field {
+  appearance: none;
+  display: block;
+}
+
+textarea.field {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.field::placeholder { color: var(--c-placeholder); }
+
+.field:hover { border-color: rgb(0 0 0 / 10%); }
+
+.field:focus,
+.field:focus-within,
+.field.is-focus {
+  outline: none;
+  border-color: var(--c-primary);
+  border-radius: var(--radius-input-lg);
+  box-shadow: var(--shadow-field-focus);
+}
+
+.field.is-error,
+.field-group.is-error .field {
+  border-color: var(--c-danger);
+}
+
+/* Mũi tên cho select */
+select.field {
+  padding-right: 36px;
+  background-image: url("../assets/tomfest/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 20px 20px;
+  color: var(--c-placeholder);
+}
+
+select.field:valid,
+select.field.has-value { color: var(--c-field-text); }
+
+/* --- Thông báo lỗi ---------------------------------------------------------- */
+/* Chỉ hiện khi nhóm trường đang ở trạng thái lỗi (JS bật/tắt .is-error) */
+.field-error { display: none; }
+
+.field-group.is-error .field-error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-normal);
+  color: var(--c-danger);
+}
+
+.field-error img { width: 12px; height: 12px; flex: none; }
+
+/* --- Radio ------------------------------------------------------------------ */
+.radio-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.radio-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: var(--field-h);
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-input);
+  background: var(--c-field-bg);
+  box-shadow: var(--shadow-field);
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  color: var(--c-label);
+  cursor: pointer;
+  transition: border-color var(--dur) var(--ease);
+}
+
+.radio-row:hover { border-color: rgb(0 0 0 / 10%); }
+
+.radio-row input[type="radio"] {
+  appearance: none;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 1px solid rgb(1 1 1 / 11%);
+  border-radius: var(--radius-pill);
+  background: var(--c-surface);
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 4%);
+  cursor: pointer;
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.radio-row input[type="radio"]:checked {
+  border-color: transparent;
+  background: var(--c-primary) radial-gradient(circle, #fff 0 3.5px, transparent 3.5px);
+}
+
+.radio-row:has(input:checked) { border-color: rgb(41 109 210 / 35%); }
+
+.radio-row input[type="radio"]:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 2px;
+}
+
+/* --- Upload ------------------------------------------------------------------ */
+.upload-field {
+  cursor: pointer;
+  color: var(--c-field-text);
+}
+
+.upload-field img { width: 20px; height: 20px; flex: none; }
+
+.upload-field input[type="file"] {
+  position: absolute;
+  width: 1px; height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.upload-file[hidden] { display: none; }
+
+.upload-file {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 10px 12px;
+  border: 1px solid var(--c-primary);
+  border-radius: var(--radius-input);
+  background: var(--c-surface);
+  box-shadow: var(--shadow-float);
+}
+
+.upload-file__meta {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.upload-file__name {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  color: var(--c-field-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upload-file__size {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-label);
+  color: var(--c-placeholder);
+}
+
+.upload-file__remove {
+  flex: none;
+  display: inline-flex;
+  padding: 2px;
+  border-radius: var(--radius-pill);
+}
+
+.upload-file__remove img { width: 20px; height: 20px; }
+.upload-file__remove:hover { background: var(--c-fill-subtle); }
+
+/* --- Trường điện thoại có cờ quốc gia ---------------------------------------- */
+.phone-field { padding-left: 8px; }
+
+.phone-field__country {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  flex: none;
+  padding-right: var(--space-xs);
+  border-right: 1px solid var(--c-border-card);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  color: var(--c-label);
+}
+
+.phone-field__country img:first-child { width: 20px; height: 20px; border-radius: 3px; }
+.phone-field__country img:last-child { width: 16px; height: 16px; }
+
+.phone-field input {
+  flex: 1 1 0;
+  min-width: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  outline: none;
+}
+
+.phone-field input::placeholder { color: var(--c-placeholder); }
+
+/* --- Nút quay lại dạng viên thuốc --------------------------------------------- */
+.back-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  align-self: flex-start;
+  padding: 6px 8px;
+  border: 1px solid var(--c-border-card);
+  border-radius: 99px;
+  background: var(--c-surface);
+  box-shadow: var(--shadow-float);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  color: var(--c-field-text);
+  transition: background-color var(--dur) var(--ease);
+}
+
+.back-pill:hover { background: #f2f5fa; }
+.back-pill img { width: 20px; height: 20px; }

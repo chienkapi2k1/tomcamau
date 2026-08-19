@@ -2,117 +2,208 @@
 <html lang="vi">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Sơ đồ sự kiện</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/booth.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Khu triển lãm — Tôm Fest Cà Mau</title>
+  <meta name="description" content="Sơ đồ sự kiện và chọn gian hàng triển lãm Tôm Fest Cà Mau 11.2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Mona+Sans:wght@600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/booth.css">
 </head>
 
 <body>
-    <header class="site-header"><a href="index.html"><img class="site-logo" src="assets/logo-white.png"></a>
-        <nav class="site-nav"><a href="index.html">Trang Chủ</a><a href="booth.html">Khu Triển Lãm</a><a
-                href="visitor.html">Hỗ Trợ Khách Hàng</a><a href="#">Truyền Thông</a></nav>
-        <div class="site-actions"><a class="nav-pill" href="visitor.html">Tham quan</a><a class="nav-pill filled"
-                href="booth.html">Đăng ký gian hàng</a><button class="lang-pill">🇻🇳</button>
-                </div>
-    </header>
-    <main class="booth-page">
-        <section class="booth-top">
-            <div class="map-stage"><img src="assets/event-map.png" class="map-top"></div>
-            <aside class="scheme">
-                <h1>SƠ ĐỒ SỰ KIỆN</h1>
-                <div class="scheme-card">
-                    <div class="scheme-title">Giá gian hàng</div>
-                    <div class="price-line"><i class="dot green"></i>
-                        <div><b>V0 / 150 gian hàng (3×3m²)</b><strong>6.572.000 VNĐ</strong></div><span>1m²</span>
-                    </div>
-                    <div class="price-line"><i class="dot purple"></i>
-                        <div><b>V1 / 40 gian Khu ẩm thực (3×3m²)</b></div><span>Miễn phí</span>
-                    </div>
-                    <div class="price-line"><i class="dot yellow"></i>
-                        <div><b>V2 / 180 gian (3×3m²)</b></div><span>Miễn phí</span>
-                    </div>
-                    <p>Liên hệ: <u>marintech.expo@gmail.com</u> / <u>0924 646 555</u></p>
-                </div>
-            </aside>
-        </section>
-        <section class="booth-bottom">
-            <!-- MAP FULL WIDTH -->
-            <div class="booth-map-area">
-                <!-- Ảnh nền toàn cảnh -->
-                <img src="assets/booth-map.svg" class="event-map" alt="Sơ đồ sự kiện">
+<a class="visually-hidden" href="#main">Bỏ qua điều hướng</a>
 
-                <!-- SVG các gian hàng -->
-                <div class="booth-overlay">
-                    <img src="assets/booth.svg" class="map-bottom" alt="Sơ đồ gian hàng">
+<header class="site-header site-header--solid" data-header>
+  <a class="site-header__logo" href="index.html">
+    <img src="assets/tomfest/shrimp-header.svg" alt="Tôm Fest Cà Mau" width="48" height="48">
+  </a>
 
-                    <!-- JS sẽ tự tạo 152 vùng click ở đây -->
-                    <div class="booth-hotspots"></div>
-                </div>
-            </div>
+  <div class="site-header__right">
+    <nav class="site-nav" aria-label="Điều hướng chính">
+      <a href="index.html">trang chủ</a>
+      <a href="booth.html" aria-current="page">khu triển lãm</a>
+      <a href="visitor.html">Hỗ trợ khách hàng</a>
+      <a href="index.html#news">truyền thông</a>
+    </nav>
 
-            <!-- PANEL ĐÈ LÊN MAP -->
-            <aside class="selection">
-                <h1>CHI TIẾT GIAN HÀNG</h1>
+    <div class="site-header__actions">
+      <a class="btn btn--light" href="visitor.html">Tham quan</a>
+      <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
+      <button class="lang-switch" type="button" aria-label="Đổi ngôn ngữ">
+        <img src="assets/tomfest/flag-vn.svg" alt="" width="24" height="24">
+        <img src="assets/tomfest/chevron-down.svg" alt="" width="24" height="24">
+      </button>
+    </div>
+  </div>
 
-                <div class="selection-card">
-                    <div>Danh sách gian hàng đã chọn:</div>
+  <button class="nav-toggle" type="button" data-nav-toggle aria-controls="mobile-nav" aria-expanded="false"
+    aria-label="Mở menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
 
-                    <div class="selected-tags" id="selectedTags">
-                        <span class="empty-selection">
-                            Chưa chọn gian hàng
-                        </span>
-                    </div>
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <a href="index.html">trang chủ</a>
+  <a href="booth.html">khu triển lãm</a>
+  <a href="visitor.html">Hỗ trợ khách hàng</a>
+  <a href="index.html#news">truyền thông</a>
+  <div class="mobile-nav__actions">
+    <a class="btn btn--light" href="visitor.html">Tham quan</a>
+    <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
+  </div>
+</div>
 
-                    <hr>
+<main class="booth" id="main">
 
-                    <div class="s-row">
-                        <span>Tổng diện tích</span>
-                        <b id="totalArea">0 m²</b>
-                    </div>
+  <!-- ================= Sơ đồ tổng thể + bảng giá ================= -->
+  <section class="booth-overview">
+    <div class="booth-overview__map">
+      <img src="assets/event-map.png" alt="Sơ đồ tổng thể sự kiện Tôm Fest Cà Mau">
+    </div>
 
-                    <div class="s-row">
-                        <span>Tổng tiền</span>
-                        <b id="totalPrice">0 đ</b>
-                    </div>
+    <aside class="booth-overview__panel">
+      <h1 class="panel-title">Sơ đồ sự kiện</h1>
 
-                    <div class="s-row">
-                        <span>Giảm giá gian hàng</span>
-                        <b>0 đ</b>
-                    </div>
+      <div class="price-card">
+        <p class="price-card__label">Giá gian hàng</p>
 
-                    <div class="s-row">
-                        <span>Giảm giá hội viên</span>
-                        <b>0 đ</b>
-                    </div>
-                </div>
+        <div class="price-card__group">
+          <div class="price-item">
+            <p class="price-row">
+              <span class="swatch swatch--v0"></span>
+              <span class="price-row__name">V0 / 150 gian hàng (3x3m²)</span>
+            </p>
+            <p class="price-amount">
+              <strong>6.572.000 VNĐ</strong>
+              <span>1m²</span>
+            </p>
+          </div>
 
-                <div class="selection-total">
-                    <div>
-                        <span>Tổng số tiền:</span>
-                        <b id="finalPrice">0 đ</b>
-                    </div>
-
-                    <a href="payment.html" class="continue" id="continueBtn">
-                        Tiếp tục
-                    </a>
-                </div>
-            </aside>
-        </section>
-    </main>
-    <footer class="site-footer">
-        <div class="footer-brand"><img class="footer-logo" src="assets/logo-blue.png">
-            <nav class="footer-nav"><a href="index.html">Trang chủ</a><a href="booth.html">Khu triển lãm</a><a
-                    href="#">Truyền thông</a><a href="visitor.html">Hỗ trợ khách hàng</a></nav>
+          <div class="price-item">
+            <p class="price-row">
+              <span class="swatch swatch--v1"></span>
+              <span class="price-row__name">V1 / 40 gian Khu ẩm thực (3x3m²)</span>
+              <span class="price-row__note">Miễn phí</span>
+            </p>
+            <p class="price-row">
+              <span class="swatch swatch--v2"></span>
+              <span class="price-row__name">V2 / 180 gian (3x3m²)</span>
+              <span class="price-row__note">Miễn phí</span>
+            </p>
+            <p class="price-contact">
+              <span>Liên hệ:</span>
+              <a href="mailto:marintech.expo@gmail.com">marintech.expo@gmail.com</a>
+              <span>/</span>
+              <a href="tel:+84924646555">0924 646 555</a>
+            </p>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <div class="footer-contact"><span>♧ &nbsp;0924 646 555</span><span>● &nbsp;
-                    facebook.com/marintechexpo</span><span>✉ &nbsp; marintech.expo@gmail.com</span></div><span>© 2026
-                TomFestCaMau</span>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ================= Chọn gian hàng ================= -->
+  <section class="booth-picker">
+    <p class="booth-picker__hint">Vuốt ngang để xem toàn bộ sơ đồ, chạm vào ô để chọn gian hàng.</p>
+
+    <div class="booth-picker__scroller">
+      <div class="booth-map-area">
+        <img src="assets/booth-map.svg" class="event-map" alt="Sơ đồ khu triển lãm">
+
+        <div class="booth-overlay">
+          <img src="assets/booth.svg" class="map-bottom" alt="">
+          <!-- assets/js/booth.js tạo 152 vùng chọn ở đây -->
+          <div class="booth-hotspots"></div>
         </div>
-    </footer>
-    <script src="assets/js/booth.js"></script>
+      </div>
+    </div>
+
+    <aside class="booth-detail">
+      <h2 class="panel-title">Chi tiết gian hàng</h2>
+
+      <div class="detail-card">
+        <div>
+          <p class="detail-card__label">Danh sách gian hàng đã chọn:</p>
+          <div class="selected-tags" id="selectedTags">
+            <span class="empty-selection">Chưa chọn gian hàng</span>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <span>Tổng diện tích</span>
+          <b id="totalArea">0 m²</b>
+        </div>
+
+        <hr class="detail-divider">
+
+        <div class="detail-row">
+          <span>Tổng tiền</span>
+          <b id="totalPrice">0 đ</b>
+        </div>
+
+        <hr class="detail-divider">
+
+        <div class="detail-rows">
+          <div class="detail-row"><span>Giảm giá gian hàng</span></div>
+          <div class="detail-row detail-row--indent">
+            <span>Giảm giá gian hàng</span>
+            <b>0 đ</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="total-card">
+        <div class="total-card__sum">
+          <span>Tổng số tiền:</span>
+          <b id="finalPrice">0 đ</b>
+        </div>
+        <a class="btn btn--continue" href="payment.html" id="continueBtn">Tiếp tục</a>
+      </div>
+    </aside>
+  </section>
+
+</main>
+
+<!-- ================= Footer ================= -->
+<footer class="site-footer">
+  <img class="site-footer__wave" src="assets/tomfest/footer-wave.svg" alt="" aria-hidden="true">
+
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <img class="site-footer__logo" src="assets/tomfest/shrimp-footer.svg" alt="Tôm Fest Cà Mau" width="177"
+        height="177">
+      <nav class="footer-nav" aria-label="Điều hướng chân trang">
+        <a href="index.html">Trang chủ</a>
+        <a href="booth.html">Khu triển lãm</a>
+        <a href="index.html#news">Truyền thông</a>
+        <a href="visitor.html">Hỗ trợ khách hàng</a>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <hr class="hairline">
+      <div class="footer-meta">
+        <ul class="footer-contact">
+          <li><img src="assets/tomfest/icon-phone.svg" alt="Điện thoại" width="24" height="24"><a
+            href="tel:+84924646555">0924 646 555</a></li>
+          <li><img src="assets/tomfest/icon-facebook.svg" alt="Facebook" width="24" height="24"><a
+            href="https://facebook.com/marintechexpo" rel="noopener">facebook.com/marintechexpo</a></li>
+          <li><img src="assets/tomfest/icon-email.svg" alt="Email" width="24" height="24"><a
+            href="mailto:marintech.expo@gmail.com">marintech.expo@gmail.com</a></li>
+        </ul>
+        <p class="footer-copy">© 2026 TomFestCaMau</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/booth.js" defer></script>
 </body>
 
 </html>
