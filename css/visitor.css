@@ -221,3 +221,23 @@
   .visitor__aside { flex: 0 1 636px; min-width: 0; }
   .visitor-form { padding: var(--space-xl); }
 }
+
+/* Dòng chữ báo lỗi ngay bên dưới input */
+.field-error {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8125rem; /* ~13px */
+  color: #d93025;       /* Đỏ cảnh báo */
+  line-height: 1.3;
+}
+
+.field-error:empty {
+  display: none; /* Ẩn đi khi không có lỗi */
+}
+
+/* Đổi viền ô input sang màu đỏ khi bị lỗi */
+.field.is-invalid,
+.field-group.is-invalid .field {
+  border-color: #d93025 !important;
+  background-color: #fff8f8;
+}

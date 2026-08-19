@@ -133,6 +133,7 @@
               <div class="field-group">
                 <label class="field-label" for="vFullName">Họ và tên <span class="req">*</span></label>
                 <input class="field" id="vFullName" name="entry.2092238618" required placeholder="Vd: Nguyễn Văn A">
+                <span class="field-error" id="err-fullName"></span>
               </div>
 
               <div class="form-grid form-grid--2">
@@ -140,6 +141,7 @@
                   <label class="field-label" for="vEmail">Email <span class="req">*</span></label>
                   <input class="field" id="vEmail" name="entry.1556369182" type="email" required
                     placeholder="Vd: nguyenvana@gmail.com">
+                  <span class="field-error" id="err-email"></span>
                 </div>
                 <div class="field-group">
                   <label class="field-label" for="vPhone">Điện thoại <span class="req">*</span></label>
@@ -151,6 +153,7 @@
                     </span>
                     <input id="vPhone" name="entry.1983964537" type="tel" required placeholder="000 000 0000">
                   </div>
+                  <span class="field-error" id="err-phone"></span>
                 </div>
               </div>
 
@@ -158,18 +161,20 @@
                 <div class="field-group">
                   <label class="field-label" for="vCompany">Công ty/ Tổ chức <span class="req">*</span></label>
                   <input class="field" id="vCompany" name="entry.479301265" required placeholder="Tên công ty, tổ chức">
+                  <span class="field-error" id="err-company"></span>
                 </div>
                 <div class="field-group">
                   <label class="field-label" for="vIndustry">Lĩnh vực hoạt động <span class="req">*</span></label>
                   <select class="field" id="vIndustry" name="entry.2070606089" required>
-                    <option value="" selected disabled>Lĩnh vực</option>
+                    <option value="" selected disabled hidden>Lĩnh vực</option>
                     <option value="Nuôi trồng thủy sản">Nuôi trồng thủy sản</option>
-                    <option value="Chế biến & xuất khẩu">Chế biến & xuất khẩu</option>
-                    <option value="Thiết bị & công nghệ">Thiết bị & công nghệ</option>
-                    <option value="Thức ăn & chế phẩm sinh học">Thức ăn & chế phẩm sinh học</option>
-                    <option value="Logistics & chuỗi cung ứng">Logistics & chuỗi cung ứng</option>
+                    <option value="Chế biến & xuất khẩu">Chế biến &amp; xuất khẩu</option>
+                    <option value="Thiết bị & công nghệ">Thiết bị &amp; công nghệ</option>
+                    <option value="Thức ăn & chế phẩm sinh học">Thức ăn &amp; chế phẩm sinh học</option>
+                    <option value="Logistics & chuỗi ứng">Logistics &amp; chuỗi cung ứng</option>
                     <option value="Khác">Khác</option>
                   </select>
+                  <span class="field-error" id="err-industry"></span>
                 </div>
               </div>
 
@@ -189,6 +194,7 @@
                     Diễn giả/ Đối tác
                   </label>
                 </div>
+                <span class="field-error" id="err-participation"></span>
               </fieldset>
             </div>
           </div>
