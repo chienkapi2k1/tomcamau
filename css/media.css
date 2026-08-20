@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Tôm Fest Cà Mau — Truyền thông / Hội thảo (media.html)
+   Yêu cầu: css/tokens.css → css/base.css → file này.
+   ========================================================================== */
+.media {
+  padding-block: var(--space-section) var(--space-4xl);
+  background: var(--c-bg);
+}
+
+.media__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* ==========================================================================
+   Tiêu đề trang
+   ========================================================================== */
+.media__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  text-align: center;
+}
+
+.media__eyebrow {
+  font-family: var(--font-num);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
+  line-height: var(--lh-tight);
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  color: var(--c-ink-deep);
+}
+
+.media__title {
+  max-width: 972px;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h2);
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* ==========================================================================
+   Card hội nghị
+   ========================================================================== */
+.seminar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-md);
+  background: var(--c-surface);
+}
+
+.seminar__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  min-width: 0;
+}
+
+.seminar__title {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-tight);
+  text-transform: uppercase;
+  color: var(--c-ink-navy);
+}
+
+.seminar__poster {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-input-lg);
+  object-fit: cover;
+  background: var(--c-placeholder);
+}
+
+/* --- Các ô thông tin (chủ trì, phối hợp, quy mô…) ------------------------- */
+.seminar__facts {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-3xs);
+  padding: var(--space-sm);
+  border: 1px solid var(--c-info-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-info-bg);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: #000;
+}
+
+.fact__value { font-weight: var(--fw-semibold); }
+
+/* --- Chip ngày / giờ / địa điểm ------------------------------------------- */
+.seminar__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs) var(--space-2xs);
+  list-style: none;
+}
+
+.seminar__meta li {
+  padding: var(--space-2xs) 13px;
+  border: 1px solid var(--c-chip-soft-border);
+  border-radius: var(--radius-pill);
+  background: var(--c-chip-soft-bg);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-tight);
+  color: var(--c-primary);
+}
+
+/* Nút đăng ký của card: khối vuông góc mềm, xanh đậm */
+.seminar .btn--deep { align-self: flex-start; }
+
+/* ==========================================================================
+   Desktop: hai cột, card thứ hai đảo chiều ảnh ↔ nội dung
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .media__inner { gap: var(--space-xl); }
+
+  .seminar {
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--space-lg);
+  }
+
+  .seminar--reverse { flex-direction: row-reverse; }
+
+  .seminar__body { flex: 1 1 0; }
+
+  .seminar__poster {
+    flex: 1 1 0;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .seminar__facts { grid-template-columns: 1fr 1fr; }
+
+  /* Ô "Đơn vị phối hợp" của hội nghị B2B chiếm trọn cột phải */
+  .fact--tall { grid-row: span 2; }
+}

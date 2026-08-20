@@ -8,6 +8,7 @@ Dựng theo Figma **VNF (Copy)**, khung 1920px:
 | `booth.html` — Khu triển lãm / chọn gian hàng | `5162:338` |
 | `payment.html` — Thông tin đăng ký | `5162:20505` |
 | `visitor.html` — Đăng ký tham quan | `5162:33607` |
+| `media.html` — Truyền thông / Hội thảo | `5375:28868` |
 
 Bản mobile không có trong file design nên được tự thiết kế lại từ cùng bộ token (xem "Mobile" bên dưới).
 
@@ -15,13 +16,14 @@ Bản mobile không có trong file design nên được tự thiết kế lại 
 
 | File | Vai trò |
 | --- | --- |
-| `css/tokens.css` | **Design token dùng chung toàn site** — màu, font, thang chữ fluid (`clamp()` nội suy 393px → 1920px), spacing, layout, radius, motion. Nạp đầu tiên ở mọi trang. |
+| `css/tokens.css` | **Design token dùng chung toàn site** — màu, font, thang chữ fluid 2 đoạn (`clamp()` 393→1440px trong `:root`, 1440→1920px trong `@media (min-width: 1440px)`), spacing, layout, radius, motion. Nạp đầu tiên ở mọi trang. |
 | `css/base.css` | Reset + component dùng lại: `.container`, `.section`, `.section-head`, `.btn` (light / primary / pill-icon), `.hairline`, header + drawer mobile, footer. |
 | `css/index.css` | Riêng trang chủ: hero, về chúng tôi, dải nhà tài trợ, các sự kiện chính, tin tức. |
 | `css/booth.css` | Riêng trang khu triển lãm: bảng giá, sơ đồ gian hàng, panel chi tiết. |
 | `css/forms.css` | **Hệ form dùng chung**: `.form-card`, `.field`, `.field-group`, radio, upload, trường điện thoại, `.back-pill`. Nạp cho mọi trang có form. |
 | `css/payment.css` | Riêng trang đăng ký: bố cục 718/432 và thẻ tóm tắt đơn hàng. |
 | `css/visitor.css` | Riêng trang tham quan: cột giới thiệu + liên hệ + dải đối tác, thẻ form. |
+| `css/media.css` | Riêng trang truyền thông: tiêu đề trang + card hội nghị (ô thông tin, chip ngày/giờ, poster). |
 | `css/common.css` | CSS cũ — **không trang nào dùng nữa**, xoá được. |
 
 Trang mới nạp theo thứ tự: `tokens.css` → `base.css` → `<page>.css`, rồi viết CSS riêng bằng token —

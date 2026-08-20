@@ -6,7 +6,9 @@
 /* --- Reset ----------------------------------------------------------------- */
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -15,7 +17,9 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -29,16 +33,48 @@ body {
   overflow-x: hidden;
 }
 
-body.has-nav-open { overflow: hidden; }
+body.has-nav-open {
+  overflow: hidden;
+}
 
-h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
+h1, h2, h3, h4, p, figure, dl, dd {
+  margin: 0;
+}
 
-fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
-legend { padding: 0; }
-ul, ol { margin: 0; padding: 0; list-style: none; }
-img, svg, video { display: block; max-width: 100%; }
-a { color: inherit; text-decoration: none; }
-button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
 
 :focus-visible {
   outline: 2px solid var(--c-primary);
@@ -47,8 +83,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .visually-hidden {
   position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
@@ -62,7 +100,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding-inline: var(--gutter);
 }
 
-.section { padding-block: calc(var(--space-section) / 2); }
+.section {
+  padding-block: calc(var(--space-section) / 2);
+}
 
 /* --- Section heading ---------------------------------------------------------- */
 .section-head {
@@ -80,11 +120,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--c-ink);
 }
 
-.section-head__title--bold { font-weight: var(--fw-bold); }
+.section-head__title--bold {
+  font-weight: var(--fw-bold);
+}
+
+/* Tiêu đề section dùng font body (Be Vietnam Pro) — Về chúng tôi, Các sự kiện chính */
+.section-head__title--body {
+  font-family: var(--font-body);
+}
 
 .section-head__lead {
   font-size: var(--fs-lead);
-  line-height: var(--lh-normal);
+  line-height: var(--lh-relaxed);
   color: var(--c-ink);
   max-width: 982px;
 }
@@ -103,11 +150,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   line-height: var(--lh-normal);
   white-space: nowrap;
   transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease),
-              border-color var(--dur) var(--ease), transform var(--dur-fast) var(--ease);
+  border-color var(--dur) var(--ease), transform var(--dur-fast) var(--ease);
 }
 
-.btn:hover { transform: translateY(-1px); }
-.btn:active { transform: translateY(0); }
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
 
 .btn--light {
   min-width: 160px;
@@ -116,7 +168,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-color: var(--c-border-light);
   color: #000;
 }
-.btn--light:hover { background: #f0f4fb; }
+
+.btn--light:hover {
+  background: #f0f4fb;
+}
 
 .btn--primary {
   background: var(--c-primary);
@@ -124,7 +179,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--c-on-dark);
   font-weight: var(--fw-medium);
 }
-.btn--primary:hover { background: var(--c-primary-hover); }
+
+.btn--primary:hover {
+  background: var(--c-primary-hover);
+}
 
 /* Nút "Xem tất cả": chữ trái, icon tròn phải */
 .btn--pill-icon {
@@ -133,8 +191,50 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-color: transparent;
   color: var(--c-on-dark);
 }
-.btn--pill-icon:hover { background: var(--c-primary-hover); }
-.btn--pill-icon img { width: 40px; height: 40px; }
+
+.btn--pill-icon:hover {
+  background: var(--c-primary-hover);
+}
+
+.btn--pill-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Nút "Xem chi tiết" trong card tin tức: pill nhỏ, mũi tên chéo lên */
+.btn--detail {
+  gap: var(--space-3xs);
+  min-height: 40px;
+  padding: 6px 6px 6px 12px;
+  background: var(--c-primary);
+  border-color: transparent;
+  font-family: var(--font-num);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-label);
+  color: var(--c-on-dark);
+  font-variation-settings: "wdth" 100;
+}
+.btn--detail:hover { background: var(--c-primary-hover); }
+
+/* Nút khối xanh đậm, bo nhẹ — dùng ở card hội nghị (media.html) */
+.btn--deep {
+  min-height: 44px;
+  padding: 4px 16px;
+  border-radius: var(--radius-sm);
+  border-color: var(--c-border-card);
+  background: var(--c-primary-deep);
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  line-height: 1.48;
+  letter-spacing: var(--ls-org);
+  color: var(--c-on-deep);
+}
+.btn--deep:hover { background: #143b74; }
+.btn--detail img {
+  width: 13px;
+  height: 14px;
+  transform: rotate(45deg);
+}
 
 /* --- Icon tròn mũi tên ----------------------------------------------------------- */
 .arrow-icon {
@@ -144,7 +244,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: transform var(--dur) var(--ease);
 }
 
-a:hover .arrow-icon { transform: translate(2px, -2px); }
+a:hover .arrow-icon {
+  transform: translate(2px, -2px);
+}
 
 /* --- Hairline --------------------------------------------------------------------- */
 .hairline {
@@ -204,7 +306,9 @@ body.has-nav-open .site-header {
   transition: opacity var(--dur) var(--ease);
 }
 
-.site-nav a:hover { opacity: 0.75; }
+.site-nav a:hover {
+  opacity: 0.75;
+}
 
 .site-header__actions {
   display: flex;
@@ -222,7 +326,10 @@ body.has-nav-open .site-header {
   background: var(--c-surface-alt);
 }
 
-.lang-switch img { width: 24px; height: 24px; }
+.lang-switch img {
+  width: 24px;
+  height: 24px;
+}
 
 .nav-toggle {
   display: inline-flex;
@@ -242,17 +349,32 @@ body.has-nav-open .site-header {
   transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
 }
 
-.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 @media (max-width: 1023px) {
-  .site-header__right { display: none; }
+  .site-header__right {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {
-  .site-header { padding: 24px var(--gutter); }
-  .nav-toggle { display: none; }
+  .site-header {
+    padding: 24px var(--gutter);
+  }
+
+  .nav-toggle {
+    display: none;
+  }
 }
 
 /* --- Header đặc (trang trong: booth / visitor / payment) --------------------- */
@@ -270,7 +392,9 @@ body.has-nav-open .site-header {
 }
 
 .site-header--solid .btn--light:hover,
-.site-header.is-scrolled .btn--light:hover { background: rgb(255 255 255 / 14%); }
+.site-header.is-scrolled .btn--light:hover {
+  background: rgb(255 255 255 / 14%);
+}
 
 .site-header--solid .btn--primary,
 .site-header.is-scrolled .btn--primary {
@@ -280,10 +404,14 @@ body.has-nav-open .site-header {
 }
 
 .site-header--solid .btn--primary:hover,
-.site-header.is-scrolled .btn--primary:hover { background: #eaf1fc; }
+.site-header.is-scrolled .btn--primary:hover {
+  background: #eaf1fc;
+}
 
 /* Drawer trên trang trong đã có header đặc thì không cần đổi màu thêm */
-.site-header--solid + .mobile-nav { box-shadow: var(--shadow-header); }
+.site-header--solid + .mobile-nav {
+  box-shadow: var(--shadow-header);
+}
 
 /* --- Drawer mobile ------------------------------------------------------------- */
 .mobile-nav {
@@ -298,7 +426,9 @@ body.has-nav-open .site-header {
   box-shadow: var(--shadow-header);
 }
 
-.mobile-nav[hidden] { display: none; }
+.mobile-nav[hidden] {
+  display: none;
+}
 
 /* Chỉ nhắm link điều hướng — nếu không sẽ đè font-size/color của .btn trong drawer */
 .mobile-nav a:not(.btn) {
@@ -316,14 +446,16 @@ body.has-nav-open .site-header {
   border-top: 1px solid var(--c-border);
 }
 
-.mobile-nav .btn { width: 100%; }
+.mobile-nav .btn {
+  width: 100%;
+}
 
 /* ==========================================================================
    Footer
    ========================================================================== */
 .site-footer {
   position: relative;
-  overflow: hidden;          /* giữ dải sóng không làm tràn ngang trang */
+  overflow: hidden; /* giữ dải sóng không làm tràn ngang trang */
   background: var(--c-surface);
   border-top: 1px solid var(--c-border);
   padding-block: calc(var(--footer-wave-h) + var(--space-xl)) var(--space-xl);
@@ -370,8 +502,13 @@ body.has-nav-open .site-header {
   letter-spacing: var(--ls-contact);
 }
 
-.footer-nav a { transition: opacity var(--dur) var(--ease); }
-.footer-nav a:hover { opacity: 0.7; }
+.footer-nav a {
+  transition: opacity var(--dur) var(--ease);
+}
+
+.footer-nav a:hover {
+  opacity: 0.7;
+}
 
 .site-footer__bottom {
   display: flex;
@@ -402,7 +539,11 @@ body.has-nav-open .site-header {
   letter-spacing: var(--ls-contact);
 }
 
-.footer-contact img { width: 24px; height: 24px; flex: none; }
+.footer-contact img {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
 
 .footer-copy {
   font-size: var(--fs-sm);
@@ -412,7 +553,10 @@ body.has-nav-open .site-header {
 
 /* Màn hẹp: rút gọn nút để 2 nút nằm cùng hàng như design */
 @media (max-width: 479px) {
-  .btn--light { min-width: 0; padding-inline: 20px; }
+  .btn--light {
+    min-width: 0;
+    padding-inline: 20px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -422,5 +566,7 @@ body.has-nav-open .site-header {
     justify-content: space-between;
   }
 
-  .footer-contact { justify-content: flex-start; }
+  .footer-contact {
+    justify-content: flex-start;
+  }
 }

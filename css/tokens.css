@@ -14,6 +14,10 @@
   /* --- Color: text -------------------------------------------------------- */
   --c-ink: #0b0b0b;              /* tiêu đề, đoạn văn */
   --c-ink-strong: #040404;       /* nhãn số liệu */
+  --c-ink-navy: #1b2451;         /* tiêu đề card lĩnh vực triển lãm, tiêu đề hội nghị */
+  --c-ink-deep: #0b2326;         /* eyebrow trang truyền thông */
+  --c-primary-deep: #194a91;     /* nút "Đăng ký tham gia" */
+  --c-on-deep: #fff8ea;
   --c-text: rgb(0 0 0 / 86%);    /* số liệu lớn */
   --c-on-dark: #ffffff;
   --c-on-dark-muted: rgb(255 255 255 / 80%);
@@ -45,13 +49,19 @@
 
   /* --- Color: border ------------------------------------------------------- */
   --c-border: #f1f1f1;
-  --c-hairline: #e3e3e3;
+  --c-hairline: #296DD2;
   --c-border-pill: rgb(0 0 0 / 12%);
   --c-border-card: rgb(0 0 0 / 8%);
   --c-fill-subtle: rgb(5 5 5 / 3%);
   --c-border-light: rgb(0 0 0 / 10%);
   --c-border-on-dark: rgb(255 255 255 / 35%);
-  --c-hero-overlay: rgb(0 0 0 / 20%);
+  --c-hero-overlay: rgb(52 98 125 / 58%);
+  --c-info-bg: rgb(0 98 255 / 4%);            /* ô thông tin hội nghị */
+  --c-info-border: rgb(0 98 255 / 34%);
+  --c-chip-soft-bg: rgb(41 109 210 / 8%);     /* chip ngày/giờ/địa điểm */
+  --c-chip-soft-border: rgb(41 109 210 / 18%);
+  --c-glass: rgb(255 255 255 / 50%);        /* thẻ logo đơn vị trên hero */
+  --c-glass-soft: rgb(255 255 255 / 18%);   /* chip địa điểm trên hero */
 
   /* --- Typography: family --------------------------------------------------- */
   --font-display: "Inter", "Segoe UI", system-ui, sans-serif;   /* tiêu đề */
@@ -64,15 +74,16 @@
   --fw-semibold: 600;
   --fw-bold: 700;
 
-  /* --- Typography: fluid scale (393px → 1920px) ------------------------------ */
-  --fs-hero: clamp(2.5rem, 1.984rem + 2.1vw, 4.5rem);        /* 40 → 72  */
-  --fs-hero-kicker: clamp(1.125rem, 0.9rem + 0.92vw, 2rem);  /* 18 → 32  */
-  --fs-h2: clamp(1.75rem, 1.428rem + 1.31vw, 3rem);          /* 28 → 48  */
-  --fs-h3: clamp(1.5rem, 1.243rem + 1.05vw, 2.5rem);         /* 24 → 40  */
-  --fs-h4: clamp(1.125rem, 1.029rem + 0.39vw, 1.5rem);       /* 18 → 24  */
-  --fs-stat: clamp(2.5rem, -0.18rem + 6.4vw, 7.5rem);        /* 40 → 120 */
-  --fs-lead: clamp(1rem, 0.871rem + 0.52vw, 1.5rem);         /* 16 → 24  */
-  --fs-nav: clamp(1rem, 0.968rem + 0.13vw, 1.125rem);        /* 16 → 18  */
+  /* --- Typography: fluid scale --------------------------------------------------*/
+  --fs-hero: clamp(1.875rem, 1.359rem + 2.1vw, 3.25rem);          /* 30 → 52 → 64  */
+  --fs-hero-kicker: clamp(1.125rem, 0.937rem + 0.76vw, 1.625rem); /* 18 → 26 → 32  */
+  --fs-h2: clamp(1.75rem, 1.469rem + 1.15vw, 2.5rem);             /* 28 → 40 → 48  */
+  --fs-h3: clamp(1.5rem, 1.312rem + 0.76vw, 2rem);                /* 24 → 32 → 40  */
+  --fs-h4: clamp(1.125rem, 1.055rem + 0.29vw, 1.3125rem);         /* 18 → 21 → 24  */
+  --fs-stat: clamp(2.5rem, 1.186rem + 5.35vw, 6rem);              /* 40 → 96 → 120 */
+  --fs-lead: clamp(1rem, 0.906rem + 0.38vw, 1.25rem);             /* 16 → 20 → 24  */
+  --fs-zone: clamp(1.25rem, 1.0625rem + 0.76vw, 1.75rem);         /* 20 → 28 → 32  */
+  --fs-nav: clamp(1rem, 0.977rem + 0.1vw, 1.0625rem);             /* 16 → 17 → 18  */
   --fs-body: 1rem;                                            /* 16 */
   --fs-sm: 0.875rem;                                          /* 14 */
   --fs-label: 0.75rem;                                        /* 12 */
@@ -83,9 +94,11 @@
   --lh-tight: 1.2;
   --lh-normal: normal;
   --lh-body: 1.5;
+  --lh-relaxed: 1.6;
   --ls-nav: 0.6px;
   --ls-stat: 0.52px;
   --ls-contact: -0.0396px;
+  --ls-org: -0.18px;
 
   /* --- Spacing --------------------------------------------------------------- */
   --space-3xs: 4px;
@@ -101,7 +114,7 @@
   --space-5xl: 72px;
 
   /* Khoảng cách giữa các section: 56px (mobile) → 120px (desktop) */
-  --space-section: clamp(3.5rem, 2.53rem + 3.93vw, 7.5rem);
+  --space-section: clamp(2rem, 2.53rem + 2vw, 5rem);
 
   /* --- Layout ---------------------------------------------------------------- */
   --content-max: 1824px;
@@ -112,6 +125,7 @@
   --footer-wave-h: clamp(28px, 4.9vw, 94px);
 
   /* --- Radius ----------------------------------------------------------------- */
+  --radius-xs: 6px;
   --radius-sm: 8px;
   --radius-input: 8px;
   --radius-input-lg: 12px;
@@ -121,7 +135,7 @@
   --radius-pill: 999px;
 
   /* --- Elevation --------------------------------------------------------------- */
-  --shadow-card: 0 2px 16px rgb(11 11 11 / 4%);
+  --shadow-card: 0 4px 20px rgb(0 0 0 / 5%);
   --shadow-float: 0 0 6px rgb(0 0 0 / 10%);
   --shadow-field: inset 0 0 1px 0 rgb(0 0 0 / 8%), inset 0 0 3px 0 rgb(0 0 0 / 12%);
   --shadow-field-focus: inset 0 0 1px 0 rgb(25 74 145 / 8%), inset 0 0 3px 0 rgb(25 74 145 / 12%);
@@ -135,4 +149,19 @@
 
 @media (min-width: 1024px) {
   :root { --header-h: 96px; }
+}
+
+/* Đoạn 2 của thang chữ: từ 1440px trở lên mới tiến dần về cỡ gốc trong Figma (1920px) */
+@media (min-width: 1440px) {
+  :root {
+    --fs-hero: clamp(3.25rem, 1rem + 2.5vw, 4rem);              /* 52 → 64  */
+    --fs-hero-kicker: clamp(1.625rem, 0.5rem + 1.25vw, 2rem);   /* 26 → 32  */
+    --fs-h2: clamp(2.5rem, 1rem + 1.67vw, 3rem);                /* 40 → 48  */
+    --fs-h3: clamp(2rem, 0.5rem + 1.67vw, 2.5rem);              /* 32 → 40  */
+    --fs-h4: clamp(1.3125rem, 0.75rem + 0.63vw, 1.5rem);        /* 21 → 24  */
+    --fs-stat: clamp(6rem, 1.5rem + 5vw, 7.5rem);               /* 96 → 120 */
+    --fs-lead: clamp(1.25rem, 0.5rem + 0.7vw, 1.5rem);         /* 20 → 24  */
+    --fs-zone: clamp(1.75rem, 1rem + 0.83vw, 2rem);             /* 28 → 32  */
+    --fs-nav: clamp(1.0625rem, 0.875rem + 0.21vw, 1.125rem);    /* 17 → 18  */
+  }
 }
