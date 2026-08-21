@@ -37,7 +37,7 @@
 
 .visitor__title {
   font-weight: var(--fw-semibold);
-  font-size: clamp(2rem, 1.484rem + 2.1vw, 3rem);   /* 32 → 48 */
+  font-size: clamp(2rem, 1.484rem + 2.1vw, 3rem); /* 32 → 48 */
   line-height: 1.15;
   color: var(--c-ink);
 }
@@ -86,8 +86,13 @@
   color: #090909;
 }
 
-.contact-list a { transition: color var(--dur) var(--ease); }
-.contact-list a:hover { color: var(--c-primary); }
+.contact-list a {
+  transition: color var(--dur) var(--ease);
+}
+
+.contact-list a:hover {
+  color: var(--c-primary);
+}
 
 /* Đối tác */
 .partners {
@@ -99,7 +104,7 @@
 
 .partners__title {
   font-weight: var(--fw-semibold);
-  font-size: clamp(1.5rem, 1.242rem + 1.05vw, 2rem);   /* 24 → 32 */
+  font-size: clamp(1.5rem, 1.242rem + 1.05vw, 2rem); /* 24 → 32 */
   line-height: var(--lh-tight);
   color: var(--c-navy);
 }
@@ -139,13 +144,22 @@
 }
 
 @keyframes partners-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .partners__track { animation: none; }
-  .partners__rail { overflow-x: auto; }
+  .partners__track {
+    animation: none;
+  }
+
+  .partners__rail {
+    overflow-x: auto;
+  }
 }
 
 /* --- Cột phải: thẻ form ------------------------------------------------------ */
@@ -168,7 +182,7 @@
 
 .visitor-form__title {
   font-weight: var(--fw-semibold);
-  font-size: clamp(1.5rem, 1.242rem + 1.05vw, 2rem);   /* 24 → 32 */
+  font-size: clamp(1.5rem, 1.242rem + 1.05vw, 2rem); /* 24 → 32 */
   line-height: var(--lh-tight);
   color: var(--c-navy);
 }
@@ -180,7 +194,9 @@
 }
 
 /* Nhóm "Hình thức tham gia" */
-.visitor-form .radio-set { gap: var(--space-xs); }
+.visitor-form .radio-set {
+  gap: var(--space-xs);
+}
 
 .visitor-form__submit {
   align-self: flex-end;
@@ -195,8 +211,14 @@
   transition: background-color var(--dur) var(--ease), transform var(--dur-fast) var(--ease);
 }
 
-.visitor-form__submit:hover { background: var(--c-primary-hover); transform: translateY(-1px); }
-.visitor-form__submit:active { transform: translateY(0); }
+.visitor-form__submit:hover {
+  background: var(--c-primary-hover);
+  transform: translateY(-1px);
+}
+
+.visitor-form__submit:active {
+  transform: translateY(0);
+}
 
 .visitor-form__status {
   padding: var(--space-xs) 10px;
@@ -208,7 +230,9 @@
   color: var(--c-zone-v0-ink);
 }
 
-.visitor-form__status[hidden] { display: none; }
+.visitor-form__status[hidden] {
+  display: none;
+}
 
 @media (min-width: 1024px) {
   .visitor__grid {
@@ -217,9 +241,18 @@
     gap: var(--space-4xl);
   }
 
-  .visitor__intro { flex: 1 1 780px; }
-  .visitor__aside { flex: 0 1 636px; min-width: 0; }
-  .visitor-form { padding: var(--space-xl); }
+  .visitor__intro {
+    flex: 1 0;
+  }
+
+  .visitor__aside {
+    flex: 1 0;
+    min-width: 0;
+  }
+
+  .visitor-form {
+    padding: var(--space-xl);
+  }
 }
 
 /* Dòng chữ báo lỗi ngay bên dưới input */
@@ -227,7 +260,7 @@
   display: block;
   margin-top: 4px;
   font-size: 0.8125rem; /* ~13px */
-  color: #d93025;       /* Đỏ cảnh báo */
+  color: #d93025; /* Đỏ cảnh báo */
   line-height: 1.3;
 }
 

@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;600;700&family=Mona+Sans:wght@600;700&display=swap">
+  <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/index.css">
@@ -29,7 +30,7 @@
       <a href="index.html">trang chủ</a>
       <a href="booth.html">khu triển lãm</a>
       <a href="visitor.html">Hỗ trợ khách hàng</a>
-      <a href="#news">truyền thông</a>
+      <a href="media.html">truyền thông</a>
     </nav>
 
     <div class="site-header__actions">
@@ -52,7 +53,7 @@
   <a href="index.html">trang chủ</a>
   <a href="booth.html">khu triển lãm</a>
   <a href="visitor.html">Hỗ trợ khách hàng</a>
-  <a href="#news">truyền thông</a>
+  <a href="media.html">truyền thông</a>
   <div class="mobile-nav__actions">
     <a class="btn btn--light" href="visitor.html">Tham quan</a>
     <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
@@ -66,22 +67,56 @@
     <img class="hero__bg" src="assets/tomfest/hero.jpg" alt="" fetchpriority="high">
 
     <div class="hero__content">
-      <div>
+      <img class="hero__mark" src="assets/tomfest/shrimp-hero.svg" alt="" width="80" height="80">
+
+      <div class="hero__heading">
         <p class="hero__kicker">Triển lãm</p>
-        <h1 class="hero__title">Tôm Fest Cà Mau</h1>
+        <h1 class="hero__title">Festival Tôm Cà Mau - Lần thứ II năm 2026</h1>
       </div>
 
-      <img class="hero__mark" src="assets/tomfest/shrimp-hero.svg" alt="" width="193" height="193">
+      <ul class="hero__orgs">
+        <li class="hero-org">
+          <p class="hero-org__role">Cơ quan bảo trợ</p>
+          <div class="hero-org__badge">
+            <img src="assets/tomfest/org-bo-nnmt.png" alt="" width="88" height="90">
+          </div>
+          <p class="hero-org__name">Bộ Nông nghiệp<br>và Môi trường</p>
+        </li>
 
-      <div class="hero__date">
-        <img src="assets/tomfest/hero-wave-small.svg" alt="" width="167" height="44">
-        <span>11.2026</span>
-      </div>
+        <li class="hero-org">
+          <p class="hero-org__role">Cơ quan chỉ đạo</p>
+          <div class="hero-org__badge">
+            <img class="hero-org__logo--round" src="assets/tomfest/org-ubnd-camau.png" alt="" width="91" height="90">
+          </div>
+          <p class="hero-org__name">Ủy ban nhân dân<br>tỉnh Cà Mau</p>
+        </li>
+
+        <li class="hero-org">
+          <p class="hero-org__role">Đơn vị chủ trì</p>
+          <div class="hero-org__badge">
+            <img class="hero-org__logo--round" src="assets/tomfest/org-so-nnmt.png" alt="" width="90" height="90">
+          </div>
+          <p class="hero-org__name">Sở NN &amp; MT tỉnh Cà Mau</p>
+        </li>
+
+        <li class="hero-org">
+          <p class="hero-org__role">Đơn vị tổ chức</p>
+          <div class="hero-org__badge">
+            <img src="assets/tomfest/org-vinafis.png" alt="" width="104" height="90">
+          </div>
+          <p class="hero-org__name">VINAFIS PLUS</p>
+        </li>
+      </ul>
 
       <div class="hero__actions">
         <a class="btn btn--light" href="visitor.html">Tham quan</a>
         <a class="btn btn--primary" href="booth.html">Đăng ký gian hàng</a>
       </div>
+
+      <p class="hero__venue">
+        <img src="assets/tomfest/icon-location-white.svg" alt="" width="20" height="20">
+        <span>Quảng trường Phan Ngọc Hiển, đường Lê Duẩn, Phường An Xuyên, tỉnh Cà Mau</span>
+      </p>
     </div>
 
     <img class="hero__wave" src="assets/tomfest/hero-wave.svg" alt="" aria-hidden="true">
@@ -91,29 +126,33 @@
   <section class="about section" id="about">
     <div class="container about__grid">
       <div class="about__intro">
-        <h2 class="section-head__title">Về chúng tôi</h2>
-        <p class="section-head__lead">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
-          vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
-          ullamcorper odio sed lectus. Fusce ullamcorper felis eu et nibh dis accumsan in. Cursus porta massa elit
-          amet blandit.</p>
+        <h2 class="section-head__title section-head__title--body">Nơi hội tụ bản sắc, công nghệ và tương lai ngành tôm
+          Việt Nam</h2>
+        <p class="about__text">Trong xu thế ngành thủy sản toàn cầu dịch chuyển mạnh mẽ sang kinh tế xanh, minh
+          bạch truy xuất nguồn gốc và phát triển bền vững thích ứng với biến đổi khí hậu, Cà Mau tự hào khẳng định
+          vị thế trung tâm kinh tế thủy sản của cả nước. Festival <strong>Tôm Cà Mau</strong> -
+          <strong>Lần thứ II</strong> <strong>năm 2026</strong> được tổ chức như một hệ sinh thái toàn diện kết hợp
+          “Triển lãm chuyên sâu - Hội nghị chiến lược – Xúc tiến thương mại - Văn hóa &amp; Du lịch trải nghiệm”.
+          Đây là nền tảng chiến lược kết nối người nuôi trồng, các nhà khoa học, chuỗi bán lẻ và đối tác xuất nhập
+          khẩu toàn cầu, cùng kiến tạo chuỗi giá trị tôm Việt Nam thịnh vượng và vững bền.</p>
       </div>
 
       <dl class="stats">
         <div class="stat">
-          <dd class="stat__value">250+</dd>
-          <dt class="stat__label">Gian hàng trưng bày</dt>
+          <dd class="stat__value">350+</dd>
+          <dt class="stat__label">Gian hàng quy mô</dt>
         </div>
         <div class="stat">
-          <dd class="stat__value">10.000+</dd>
+          <dd class="stat__value">8.000+</dd>
           <dt class="stat__label">Khách tham quan chuyên ngành</dt>
-        </div>
-        <div class="stat">
-          <dd class="stat__value">30+</dd>
-          <dt class="stat__label">Quốc gia tham dự</dt>
         </div>
         <div class="stat">
           <dd class="stat__value">600+</dd>
           <dt class="stat__label">Bài báo liên quan</dt>
+        </div>
+        <div class="stat">
+          <dd class="stat__value">20+</dd>
+          <dt class="stat__label">Đối tác toàn cầu</dt>
         </div>
       </dl>
     </div>
@@ -153,60 +192,105 @@
 
   <!-- ================= Các sự kiện chính ================= -->
   <section class="events section" id="events">
-    <div class="container events__inner">
-      <div class="section-head">
-        <h2 class="section-head__title">Các sự kiện chính</h2>
-        <p class="section-head__lead">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
-          vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
-          ullamcorper odio sed lectus. Fusce ullamcorper felis eu et nibh dis accumsan in. Cursus porta massa elit
-          amet blandit.</p>
-      </div>
+    <div class="container events__body">
+      <div class="events__intro">
+        <div class="section-head">
+          <h2 class="section-head__title section-head__title--body">Các sự kiện chính</h2>
+          <p class="section-head__lead">Các sự kiện Tôm Cà Mau được định hướng trở thành nơi hội tụ của cộng đồng
+            thủy sản trong nước và quốc tế.</p>
+        </div>
 
-      <div class="events__body">
         <figure class="events__figure">
-          <img class="events__photo" src="assets/tomfest/photo.jpg" alt="Không gian sự kiện Tôm Fest Cà Mau"
+          <img class="events__photo" src="assets/tomfest/events-poster.jpg"
+            alt="Poster Festival Tôm Cà Mau 2026 — quảng bá thương hiệu, kết nối đầu tư, phát triển ngành tôm bền vững"
             loading="lazy">
         </figure>
-
-        <ol class="events__list">
-          <li class="event">
-            <img class="event__num" src="assets/tomfest/num-01.svg" alt="01" width="196" height="119">
-            <div class="event__text">
-              <h3 class="event__title">Hoạt động 1</h3>
-              <p class="event__desc">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
-                vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
-                ullamcorper odio sed lectus.</p>
-            </div>
-          </li>
-          <li class="event">
-            <img class="event__num" src="assets/tomfest/num-02.svg" alt="02" width="196" height="119">
-            <div class="event__text">
-              <h3 class="event__title">Hoạt động 2</h3>
-              <p class="event__desc">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
-                vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
-                ullamcorper odio sed lectus.</p>
-            </div>
-          </li>
-          <li class="event">
-            <img class="event__num" src="assets/tomfest/num-03.svg" alt="03" width="196" height="119">
-            <div class="event__text">
-              <h3 class="event__title">Hoạt động 3</h3>
-              <p class="event__desc">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
-                vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
-                ullamcorper odio sed lectus.</p>
-            </div>
-          </li>
-          <li class="event">
-            <img class="event__num" src="assets/tomfest/num-04.svg" alt="04" width="196" height="119">
-            <div class="event__text">
-              <h3 class="event__title">Hoạt động 4</h3>
-              <p class="event__desc">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
-                vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique. Mi nullam vitae volutpat
-                ullamcorper odio sed lectus.</p>
-            </div>
-          </li>
-        </ol>
       </div>
+
+      <ol class="events__list">
+        <li class="event">
+          <img class="event__num" src="assets/tomfest/num-01.svg" alt="01" width="140" height="119">
+          <div class="event__text">
+            <h3 class="event__title">Lễ Khai mạc &amp; Chương trình Nghệ thuật Đỉnh cao</h3>
+            <p class="event__desc">Sân khấu hoành tráng mang đậm biểu tượng Đất Mũi kết hợp bắn pháo hoa chào
+              mừng.</p>
+          </div>
+        </li>
+        <li class="event">
+          <img class="event__num" src="assets/tomfest/num-02.svg" alt="02" width="140" height="119">
+          <div class="event__text">
+            <h3 class="event__title">Quảng diễn Ẩm thực Bậc thầy</h3>
+            <p class="event__desc">27 nhóm bếp tài hoa toàn quốc trực tiếp tranh tài, chế biến hàng trăm món ngon
+              thượng hạng từ tôm và cua Cà Mau hàng đêm.</p>
+          </div>
+        </li>
+        <li class="event">
+          <img class="event__num" src="assets/tomfest/num-03.svg" alt="03" width="140" height="119">
+          <div class="event__text">
+            <h3 class="event__title">Ngày hội Văn hóa Vui nhộn – Trải nghiệm Tương tác</h3>
+            <p class="event__desc">Trực tiếp tham gia các hoạt động sôi nổi: Bắt tôm trong hồ, Câu tôm càng xanh,
+              Phân loại tôm nhanh, Biểu diễn hóa trang “Tôm vui”, Hội thi thiết kế lồng đèn thủy sản.</p>
+          </div>
+        </li>
+        <li class="event">
+          <img class="event__num" src="assets/tomfest/num-04.svg" alt="04" width="140" height="119">
+          <div class="event__text">
+            <h3 class="event__title">Chương trình Farm Tour (Tham quan thực địa)</h3>
+            <p class="event__desc">Khảo sát thực tế vùng nuôi tôm sinh thái rừng ngập mặn chuẩn quốc tế, vùng thâm
+              canh công nghệ cao và nhà máy chế biến quy chuẩn xuất khẩu.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= 06 lĩnh vực triển lãm chuyên đề ================= -->
+  <section class="zones section" id="zones">
+    <div class="container zones__inner">
+      <div class="zones__head">
+        <h2 class="section-head__title section-head__title--body">06 lĩnh vực triển lãm chuyên đề</h2>
+
+        <div class="zones__nav">
+          <button class="carousel-nav" id="zones-prev" type="button" aria-label="Lĩnh vực trước">
+            <img src="assets/tomfest/icon-nav-left.svg" alt="" width="64" height="64">
+          </button>
+          <button class="carousel-nav" id="zones-next" type="button" aria-label="Lĩnh vực tiếp theo">
+            <img src="assets/tomfest/icon-nav-right.svg" alt="" width="64" height="64">
+          </button>
+        </div>
+      </div>
+
+      <vnf-carousel class="zones__carousel" slides-per-view="auto" space-between="12" prev="#zones-prev"
+        next="#zones-next">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+          <div class="swiper-slide zone-card">
+            <h3 class="zone-card__title">CÔNG NGHỆ &amp; MÔ HÌNH NUÔI BỀN VỮNG</h3>
+            <img class="zone-card__photo" src="assets/tomfest/zone-cong-nghe-nuoi.jpg" alt="Lồng nuôi biển công nghệ cao" loading="lazy">
+          </div>
+          <div class="swiper-slide zone-card">
+            <h3 class="zone-card__title">CON GIỐNG, VẬT TƯ &amp; DINH DƯỠNG THỦY SẢN</h3>
+            <img class="zone-card__photo" src="assets/tomfest/zone-con-giong.jpg" alt="Tôm giống trên tay người nuôi" loading="lazy">
+          </div>
+          <div class="swiper-slide zone-card">
+            <h3 class="zone-card__title">MÁY MÓC, CƠ GIỚI HÓA &amp; CÔNG NGHỆ SỐ</h3>
+            <img class="zone-card__photo" src="assets/tomfest/zone-may-moc.jpg" alt="Hệ thống quạt nước và thiết bị ao nuôi" loading="lazy">
+          </div>
+          <div class="swiper-slide zone-card">
+            <h3 class="zone-card__title">SẢN PHẨM GIÁ TRỊ GIA TĂNG &amp; CHẾ BIẾN SÂU</h3>
+            <img class="zone-card__photo" src="assets/tomfest/zone-che-bien.jpg" alt="Dây chuyền sơ chế tôm xuất khẩu" loading="lazy">
+          </div>
+          <div class="swiper-slide zone-card">
+            <h3 class="zone-card__title">ĐẠI NGÀN SẢN PHẨM OCOP &amp; ĐẶC SẢN VÙNG MIỀN</h3>
+            <img class="zone-card__photo" src="assets/tomfest/zone-ocop.jpg" alt="Gian trưng bày sản phẩm OCOP" loading="lazy">
+          </div>
+          <div class="swiper-slide zone-card">
+            <h3 class="zone-card__title">KHÔNG GIAN VĂN HÓA ẨM THỰC TÔM – CUA CÀ MAU</h3>
+            <img class="zone-card__photo" src="assets/tomfest/zone-am-thuc.jpg" alt="Khu ẩm thực tôm cua Cà Mau" loading="lazy">
+          </div>
+          </div>
+        </div>
+      </vnf-carousel>
     </div>
   </section>
 
@@ -214,65 +298,78 @@
   <section class="news section" id="news">
     <div class="container news__inner">
       <div class="section-head">
-        <h2 class="section-head__title section-head__title--bold">Tin tức và sự kiện</h2>
-        <p class="section-head__lead">Lorem ipsum dolor sit amet consectetur. Nisl risus nunc facilisis tempus
-          vehicula. Fermentum nulla diam eget sed tincidunt velit lacus tristique.</p>
+        <h2 class="section-head__title section-head__title--body">Tin tức và sự kiện</h2>
       </div>
 
       <div class="news__grid">
-        <article class="news__feature">
-          <a class="news-card" href="#news">
-            <img class="news-card__photo" src="assets/tomfest/photo.jpg" alt="" loading="lazy">
-            <div class="news-card__body">
-              <p class="news-card__date">
-                <img src="assets/tomfest/icon-time.svg" alt="" width="24" height="24">
-                <time datetime="2026-09-12">12-9-2026</time>
-              </p>
-              <div class="news-card__head">
-                <h3 class="news-card__title">Lorem ipsum dolor sit amet consectetur.</h3>
-                <img class="arrow-icon" src="assets/tomfest/icon-arrow.svg" alt="" width="40" height="40">
+        <article class="news-card news__feature">
+          <img class="news-card__photo" src="assets/tomfest/news-1.jpg"
+            alt="Không gian Festival Tôm Cà Mau với mô hình tôm và địa cầu" loading="lazy">
+          <div class="news-card__body">
+            <p class="news-card__source">Nguồn báo :
+              <span>Pháp luật Việt Nam — Cơ quan của Bộ Tư pháp</span>
+            </p>
+            <div class="news-card__main">
+              <div class="news-card__text">
+                <h3 class="news-card__title">Cà Mau sẵn sàng cho Festival Tôm 2026: Đưa thương hiệu tôm Việt vươn
+                  tầm thế giới</h3>
+                <p class="news-card__desc news-card__desc--clamp">Với chủ đề “Tôm Cà Mau - Vươn tầm thế giới”,
+                  Festival Tôm Cà Mau lần thứ II năm 2026 sẽ diễn ra từ ngày 21 đến 23/11. Đây không chỉ là sự kiện
+                  xúc tiến đầu tư, thương mại quy mô lớn của ngành tôm Việt Nam, Festival còn là diễn đàn kết nối
+                  doanh nghiệp, nhà khoa học, nhà đầu tư và người nuôi tôm, góp phần quảng bá thương hiệu tôm Cà
+                  Mau, mở rộng thị trường và thúc đẩy ngành hàng phát triển theo hướng xanh, bền vững và hội nhập
+                  quốc tế.</p>
               </div>
-              <p class="news-card__desc">Lorem ipsum dolor sit amet consectetur. Vitae mi massa et venenatis mauris
-                ut. Lectus sit sed porttitor duis sapien egestas ac consequat ac.</p>
+              <a class="btn btn--detail" href="https://baophapluat.vn/ca-mau-san-sang-cho-festival-tom-2026-dua-thuong-hieu-tom-viet-vuon-tam-the-gioi.html">
+                Xem chi tiết
+                <img src="assets/tomfest/icon-arrow-sm.svg" alt="" width="13" height="14">
+              </a>
             </div>
-          </a>
+          </div>
         </article>
 
         <div class="news__side">
-          <article>
-            <a class="news-card news-card--row" href="#news">
-              <img class="news-card__photo" src="assets/tomfest/photo.jpg" alt="" loading="lazy">
-              <div class="news-card__body">
-                <p class="news-card__date">
-                  <img src="assets/tomfest/icon-time.svg" alt="" width="24" height="24">
-                  <time datetime="2026-09-12">12-9-2026</time>
-                </p>
-                <div class="news-card__head">
-                  <h3 class="news-card__title">Lorem ipsum dolor sit amet consectetur.</h3>
-                  <img class="arrow-icon" src="assets/tomfest/icon-arrow.svg" alt="" width="40" height="40">
+          <article class="news-card news-card--row">
+            <img class="news-card__photo" src="assets/tomfest/news-2.jpg"
+              alt="Sân khấu đêm khai mạc Festival Tôm Cà Mau" loading="lazy">
+            <div class="news-card__body">
+              <p class="news-card__source">Nguồn báo : <span>Thanh Niên</span></p>
+              <div class="news-card__main">
+                <div class="news-card__text">
+                  <h3 class="news-card__title">Festival tôm Cà Mau 2026: Chiến lược đưa thương hiệu tôm vươn ra thế
+                    giới</h3>
+                  <p class="news-card__desc">Festival tôm Cà Mau lần thứ II năm 2026 được kỳ vọng trở thành điểm
+                    nhấn xúc tiến thương mại - đầu tư, khẳng định vai trò trung tâm sản xuất tôm của tỉnh này.</p>
                 </div>
-                <p class="news-card__desc">Lorem ipsum dolor sit amet consectetur. Vitae mi massa et venenatis mauris
-                  ut. Lectus sit sed porttitor duis sapien egestas ac consequat ac.</p>
+                <a class="btn btn--detail"
+                  href="https://thanhnien.vn/festival-tom-ca-mau-2026-chien-luoc-dua-thuong-hieu-tom-vuon-ra-the-gioi-185251228162250396.htm?gidzl=6GQQHgbcedeP79X4fd-XV1aOaq2mTVjwKX38HU8cydi45i56iN3xVm91aHErTluZKK2H7pc7L0i9h6MeUG">
+                  Xem chi tiết
+                  <img src="assets/tomfest/icon-arrow-sm.svg" alt="" width="13" height="14">
+                </a>
               </div>
-            </a>
+            </div>
           </article>
 
-          <article>
-            <a class="news-card news-card--row" href="#news">
-              <img class="news-card__photo" src="assets/tomfest/photo.jpg" alt="" loading="lazy">
-              <div class="news-card__body">
-                <p class="news-card__date">
-                  <img src="assets/tomfest/icon-time.svg" alt="" width="24" height="24">
-                  <time datetime="2026-09-12">12-9-2026</time>
-                </p>
-                <div class="news-card__head">
-                  <h3 class="news-card__title">Lorem ipsum dolor sit amet consectetur.</h3>
-                  <img class="arrow-icon" src="assets/tomfest/icon-arrow.svg" alt="" width="40" height="40">
+          <article class="news-card news-card--row">
+            <img class="news-card__photo" src="assets/tomfest/news-3.jpg"
+              alt="Biểu tượng tôm Cà Mau đặt tại quảng trường" loading="lazy">
+            <div class="news-card__body">
+              <p class="news-card__source">Nguồn báo : <span>Bộ Nông nghiệp và Môi trường</span></p>
+              <div class="news-card__main">
+                <div class="news-card__text">
+                  <h3 class="news-card__title">Cà Mau xây dựng kế hoạch tổ chức Festival Tôm lần II năm 2026</h3>
+                  <p class="news-card__desc">Thực hiện Công văn số 5748/SNNMT-KHTC ngày 24/11/2025 và Công văn số
+                    5921/SNNMT-CCTS ngày 27/11/2025 của Sở Nông nghiệp và Môi trường Cà Mau về việc chủ động chuẩn
+                    bị và tham mưu tổ chức Festival Tôm Cà Mau lần II năm 2026, Chi cục Chất lượng, Chế biến và Phát
+                    triển thị trường đã tích cực triển khai các nhiệm vụ theo phân công.</p>
                 </div>
-                <p class="news-card__desc">Lorem ipsum dolor sit amet consectetur. Vitae mi massa et venenatis mauris
-                  ut. Lectus sit sed porttitor duis sapien egestas ac consequat ac.</p>
+                <a class="btn btn--detail"
+                  href="https://mae.gov.vn/ca-mau-xay-dung-ke-hoach-to-chuc-festival-tom-lan-ii-nam-2026-20573.htm">
+                  Xem chi tiết
+                  <img src="assets/tomfest/icon-arrow-sm.svg" alt="" width="13" height="14">
+                </a>
               </div>
-            </a>
+            </div>
           </article>
         </div>
       </div>
@@ -297,7 +394,7 @@
       <nav class="footer-nav" aria-label="Điều hướng chân trang">
         <a href="index.html">Trang chủ</a>
         <a href="booth.html">Khu triển lãm</a>
-        <a href="#news">Truyền thông</a>
+        <a href="media.html">Truyền thông</a>
         <a href="visitor.html">Hỗ trợ khách hàng</a>
       </nav>
     </div>
@@ -309,17 +406,19 @@
           <li><img src="assets/tomfest/icon-phone.svg" alt="Điện thoại" width="24" height="24"><a
             href="tel:+84924646555">0924 646 555</a></li>
           <li><img src="assets/tomfest/icon-facebook.svg" alt="Facebook" width="24" height="24"><a
-            href="https://facebook.com/marintechexpo" rel="noopener">facebook.com/marintechexpo</a></li>
+            href="https://facebook.com/festivaltomcamau" rel="noopener">facebook.com/festivaltomcamau</a></li>
           <li><img src="assets/tomfest/icon-email.svg" alt="Email" width="24" height="24"><a
-            href="mailto:marintech.expo@gmail.com">marintech.expo@gmail.com</a></li>
+            href="mailto:festivaltomcamau@gmail.com">festivaltomcamau@gmail.com</a></li>
         </ul>
-        <p class="footer-copy">© 2026 TomFestCaMau</p>
+        <p class="footer-copy">© 2026 FestivalTomCaMau</p>
       </div>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/site.js" defer></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+<script src="assets/js/vnf-carousel.js?v=2" defer></script>
 </body>
 
 </html>
