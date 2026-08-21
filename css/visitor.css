@@ -255,6 +255,24 @@
   }
 }
 
+.field {
+  background-color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+.phone-field input {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.field::placeholder,
+.phone-field input::placeholder {
+  color: #8e8e93 !important;
+  opacity: 1 !important;
+}
+
 /* Dòng chữ báo lỗi ngay bên dưới input */
 .field-error {
   display: block;
@@ -268,7 +286,6 @@
   display: none; /* Ẩn đi khi không có lỗi */
 }
 
-/* Đổi viền ô input sang màu đỏ khi bị lỗi */
 .field.is-invalid,
 .field-group.is-invalid .field {
   border-color: #d93025 !important;
